@@ -1,0 +1,435 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+<section class="ftco-content">
+    <h2 class="page-title">Files I/O</h2>
+    <nav class="links">
+        <button class="btn-links">PDF Version</button>
+        <button class="btn-links" onclick="location.href='/date-time'">Date & Time </button>
+        <button class="btn-links" onclick="location.href='/functions'">Functions</button>
+        <button class="btn-links" onclick="location.href='/modules'">Modules </button>
+        <button class="btn-links" onclick="location.href='/exceptions'">exceptions </button>
+        <button class="btn-links" onclick="location.href='/class-objects'">class-objects </button>
+    </nav>
+        <p class="content">
+            This chapter covers all the basic I/O functions available in Python. For more functions, please refer to
+            standard Python documentation.
+        </p>
+
+        <h3 class="subtitle">Printing to the Screen</h3>
+        <p class="content">
+            The simplest way to produce output is using the print statement where you can pass zero or more expressions separated by commas.
+            This function converts the expressions you pass into a string and writes the result to standard output as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"> print </span><span class="disptxt">"Python is really a great language,", "isn't it?"</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            This produces the following result on your standard screen −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Python is really a great language, isn't it?
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Reading Keyboard Input</h3>
+        <p class="content">
+            Python provides two built-in functions to read a line of text from standard input,
+            which by default comes from the keyboard. These functions are −
+        </p>
+        <ul class="content-bulletlist">
+            <li> raw_input</li>
+            <li> input</li>
+        </ul>
+
+        <h3 class="subtitle">The raw_input Function</h3>
+        <p class="content">
+            The raw_input([prompt]) function reads one line from standard input and returns it as a string
+             (removing the trailing newline).
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"> str = raw_input </span><span class="brackets">(</span><span class="disptxt">"Enter your input: "</span></span><span class="brackets">)</span><br>
+                <span class="function"> print </span><span class="disptxt">"Received input is : ",</span> str <br>
+            </p>
+        </aside>
+        <p class="content">
+            This prompts you to enter any string and it would display same string on the screen.
+            When I typed "Hello Python!", its output is like this −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Enter your input: Hello Python
+                Received input is :  Hello Python
+            </p>
+        </aside>
+
+        <h3 class="subtitle">The input Function</h3>
+        <p class="content">
+            The input([prompt]) function is equivalent to raw_input, except that it assumes the input is
+            a valid Python expression and returns the evaluated result to you.
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"> str = input </span><span class="brackets">(</span><span class="disptxt">"Enter your input: "</span></span><span class="brackets">)</span><br>
+                <span class="function"> print </span><span class="disptxt">"Received input is : ",</span> str <br>
+            </p>
+        </aside>
+        <p class="content">
+            This would produce the following result against the entered input −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Enter your input: [x*5 for x in range(2,10,2)]
+                Recieved input is :  [10, 20, 30, 40]
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Opening and Closing Files</h3>
+        <p class="content">
+            Until now, you have been reading and writing to the standard input and output. Now, we will see how to use actual data files.
+            <br>
+            Python provides basic functions and methods necessary to manipulate files by default.
+            You can do most of the file manipulation using a file object.
+        </p>
+        <h3 class="subtitle">The open Function</h3>
+        <p class="content">
+            Before you can read or write a file, you have to open it using Python's built-in open() function. This function creates a file object,
+            which would be utilized to call other support methods associated with it.
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                file object = open(file_name [, access_mode][, buffering])
+            </p>
+        </aside>
+        <p class="content">
+            Here are parameter details −
+        </p>
+        <ul class="content-bulletlist">
+            <li><b> file_name −</b> The file_name argument is a string value that contains the name of the file that you want to access.</li>
+            <li><b> access_mode − </b>bThe access_mode determines the mode in which the file has to be opened, i.e., read, write, append, etc.
+                 A complete list of possible values is given below in the table. This is optional parameter and the default file access
+                 mode is read (r).</li>
+            <li><b> buffering −  </b>If the buffering value is set to 0, no buffering takes place. If the buffering value is 1, line buffering is performed
+                 while accessing a file. If you specify the buffering value as an integer greater than 1,
+                then buffering action is performed with the indicated buffer size. If negative, the buffer size is the system default(default behavior).</li>
+        </ul>
+        <p class="content">
+            Here is a list of the different modes of opening a file −
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Modes & Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <b>r</b><br>
+                    <br>
+                    Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <b>rb</b><br>
+                    <br>
+                    Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file.
+                    This is the default mode.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <b>r+</b><br>
+                    <br>
+                    Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+                </td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>
+                    <b>rb+</b><br>
+                    <br>
+                    Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
+                </td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>
+                    <b>w</b><br>
+                    <br>
+                    Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+                </td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>
+                    <b>wb</b><br>
+                    <br>
+                    Opens a file for writing only in binary format. Overwrites the file if the file exists.
+                    If the file does not exist, creates a new file for writing.
+                </td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>
+                    <b>w+</b><br>
+                    <br>
+                    Opens a file for both writing and reading.
+                    Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+                </td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>
+                    <b>wb+</b><br>
+                    <br>
+                    Opens a file for both writing and reading in binary format.
+                    Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+                </td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>
+                    <b>a</b><br>
+                    <br>
+                    Opens a file for appending. The file pointer is at the end of the file if the file exists.
+                     That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+                </td>
+            </tr>
+            <tr>
+                <td>10.</td>
+                <td>
+                    <b>ab</b><br>
+                    <br>
+                    Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists.
+                     That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+                </td>
+            </tr>
+            <tr>
+                <td>11.</td>
+                <td>
+                    <b>a+</b><br>
+                    <br>
+                    Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists.
+                    The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+                </td>
+            </tr>
+            <tr>
+                <td>12.</td>
+                <td>
+                    <b>ab+</b><br>
+                    <br>
+                    Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists.
+                    The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+                </td>
+            </tr>
+
+        </table>
+
+        <h3 class="subtitle">The file Object Attributes</h3>
+        <p class="content">
+            Once a file is opened and you have one file object, you can get various information related to that file.
+            <br>
+            Here is a list of all attributes related to file object −
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Attribute & Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <b>file.closed</b><br>
+                    <br>
+                    Returns true if file is closed, false otherwise.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <b>file.mode</b><br>
+                    <br>
+                    Returns access mode with which file was opened.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <b>file.name</b><br>
+                    <br>
+                    Returns name of the file.
+                </td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>
+                    <b>file.softspace</b><br>
+                    <br>
+                    Returns false if space explicitly required with print, true otherwise.
+                </td>
+            </tr>
+        </table>
+
+        <h3 class="subtitle">Example</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                fo = open<span class="brackets">(</span><span class="disptxt">"foo.txt", "wb"</span><span class="brackets">)</span><br>
+                <span class="function"> print </span><span class="disptxt">"Name of the file: ",</span>fo.name<br>
+                <span class="function"> print </span><span class="disptxt">"Closed or not : ",</span>fo.closed<br>
+                <span class="function"> print </span><span class="disptxt">"Softspace flag : ",</span>fo.softspace<br>
+            </p>
+        </aside>
+        <p class="content">
+            This produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Name of the file:  foo.txt<br>
+                Closed or not :  False<br>
+                Opening mode :  wb<br>
+                Softspace flag :  0<br>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">The close() Method</h3>
+        <p class="content">
+            The close() method of a file object flushes any unwritten information and closes the file object, after which no more
+            writing can be done.
+            <br>
+            Python automatically closes a file when the reference object of a file is reassigned to another file.
+            It is a good practice to use the close()
+            method to close a file.
+        </p>
+        <h3 class="subtitle">Syntax</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">fileObject.close()</span><br>
+            </p>
+        </aside>
+        <h3 class="subtitle">Example</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"># Open a file</span><br>
+                fo = open<span class="brackets">(</span><span class="disptxt">"foo.txt", "wb"</span><span class="brackets">)</span><br>
+                <span class="function"> print </span><span class="disptxt">"Name of the file: ",</span>fo.name<br>
+                <br>
+                <span class="function"># Close opend file</span><br>
+            </span><span class="disptxt">fo.close()</span>
+            </p>
+        </aside>
+        <p class="content">
+            This produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Name of the file:  foo.txt
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Reading and Writing Files</h3>
+        <p class="content">
+            The file object provides
+            a set of access methods to make our lives easier. We would see how to use read() and write() methods to read and write files.
+        </p>
+        <h3 class="subtitle">The write() Method</h3>
+        <p class="content">
+            The write() method writes any string to an open file. It is important to note that Python strings can have binary
+            data and not just text.
+            <br>
+            The write() method does not add a newline character ('\n') to the end of the string −
+        </p>
+        <h3 class="subtitle">Syntax</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">fileObject.write(string)</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            Here, passed parameter is the content to be written into the opened file.
+        </p>
+        <h3 class="subtitle">Example</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function">open a file</span><br>
+                fo = open<span class="brackets">(</span><span class="disptxt">"foo.txt", "wb"</span><span class="brackets">)</span><br>
+                <span class="function"> fo.write </span><span class="brackets">(</span><span class="disptxt">"Python is really a great language,\nYeah its great!!\n"</span><span class="brackets">)</span><br>
+                <span class="function"># Close opend file</span><br>
+                <span class="disptxt">fo.close()</span>
+            </p>
+        </aside>
+        <p class="content">
+            The above method would create foo.txt file and would write given content in that file and finally it would close that file. If you would open this file, it would have following content.
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Python is a great language.<br>
+                Yeah its great!!
+            </p>
+        </aside>
+
+        <h3 class="subtitle">The read() Method</h3>
+        <p class="content">
+            The read() method reads a string from an open file. It is important to note that Python strings can have binary data. apart from text data.
+        </p>
+        <h3 class="subtitle">Syntax</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">fileObject.read([count])</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            Here, passed parameter is the number of bytes to be read from the opened file. This method starts reading from the beginning of the file and if count is missing, then it tries to read as much as possible, maybe until the end of file.
+        </p>
+        <h3 class="subtitle">Example</h3>
+        <p class="content">
+            Let's take a file foo.txt, which we created above.
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function">open a file</span><br>
+                fo = open<span class="brackets">(</span><span class="disptxt">"foo.txt", "r+"</span><span class="brackets">)</span><br>
+                str = fo.read<span class="brackets">(</span><span class="disptxt">10</span><span class="brackets">)</span><br>
+                <span class="function"> print </span><span class="disptxt">"Read String is : ",</span> str <br>
+                <br>
+                <span class="function"># Close opend file</span><br>
+                <span class="disptxt">fo.close()</span>
+            </p>
+        </aside>
+        <p class="content">
+            This produces the following result -
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Read String is :  Python is
+            </p>
+        </aside>
+
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/modules'"><i class="fa fa-angle-left"></i>Previous Page</button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/exceptions'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+</section>
+
+<%- include ("partials/footer") -%>

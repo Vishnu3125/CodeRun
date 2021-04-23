@@ -1,0 +1,491 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+    
+    <section class="ftco-content">
+        <h2 class="page-title"> Python- Variable Types</h2>
+        <nav class="links">
+            <button class="btn-links">PDF Version</button>
+            <button class="btn-links" onclick="location.href='/basic-syntax'">Basic Syntax</button>
+            <button class="btn-links" onclick="location.href='/basic-operator'">Basic Operator</button>
+        </nav>
+        <p class="content">
+            Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in memory.
+        </p>
+        <p class="content">
+            Based on the data type of a variable, the interpreter allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to variables, you can store integers, decimals or characters in these variables.
+        </p>
+        
+        <h3 class="subtitle">Assigning Values to Variables</h3>
+        <p class="content">
+            Python variables do not need explicit declaration to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.
+        </p>
+          
+        <p class="content">
+            The operand to the left of the = operator is the name of the variable and the operand to the right of the = operator is the value stored in the variable. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="brackets">#!/usr/bin/python</span> <br>
+                <span class="function">counter = 100</span><span class="brackets"># An integer assignment</span> <br>
+                <span class="function">miles   = 1000.0</span> <span class="brackets"> # A floating point</span> <br>
+                <span class="function">name    = "John" </span></span><span class="brackets"># A string</span> <br>
+
+                <span class="function">print counter</span><br>
+                <span class="function">print miles</span> <br>
+                <span class="function">print name </span></span><br>
+               
+            </p>
+        </aside>
+        
+        
+        <p class="content">
+            Here, 100, 1000.0 and "John" are the values assigned to counter, miles, and name variables, respectively. This produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+        <span class="function">100</span><br>
+                <span class="function">1000.0</span> <br>
+                <span class="function">John </span></span><br></p></aside>
+        <h3 class="subtitle">Multiple Assignment</h3>
+        <p class="content">
+            Python allows you to assign a single value to several variables simultaneously. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+        <span class="function">  a = b = c = 1</span><br></p></aside>
+        
+        
+        <p class="content">
+            Here, an integer object is created with the value 1, and all three variables are assigned to the same memory location. You can also assign multiple objects to multiple variables. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+        <span class="function">  a,b,c = 1,2,"john"</span><br></p></aside>
+       
+        <p class="content">
+            Here, two integer objects with values 1 and 2 are assigned to variables a and b respectively, and one string object with the value "john" is assigned to the variable c.
+        </p>
+        <h3 class="subtitle">Standard Data Types</h3>
+        <p class="content">
+            The data stored in memory can be of many types. For example, a person's age is stored as a numeric value and his or her address is stored as alphanumeric characters. Python has various standard data types that are used to define the operations possible on them and the storage method for each of them.
+        </p>
+        <h3 class="subtitle">Python Numbers</h3>
+        
+        <p class="content">
+            Number data types store numeric values. Number objects are created when you assign a value to them. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+        <span class="function"> var1 = 1</span><br>
+        <span class="function"> var2 = 10</span><br>
+    </p></aside>
+       
+       
+        <p class="content">
+            You can also delete the reference to a number object by using the del statement. The syntax of the del statement is −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+        <span class="function"> del var1[,var2[,var3[....,varN]]]]</span><br>
+        
+    </p></aside>
+        <p class="content">
+            You can delete a single object or multiple objects by using the del statement. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+        <span class="function"> del var</span><br>
+        <span class="function"> del var_a, var_b</span><br>
+        
+    </p></aside>
+        <p class="content">Python supports four different numerical types −</p>
+        <ul class="content-bulletlist">
+            <li>int (signed integers)</li>
+            <li>long (long integers, they can also be represented in octal and hexadecimal)</li>
+            <li>float (floating point real values)</li>
+            <li>complex (complex numbers)</li>
+            
+        </ul>
+   <h4>Examples</h4>
+   <p class="content">
+    Here are some examples of numbers −
+</p>
+<table class="content-table">
+    <tr class="tr">
+        <th class="th">int</th>
+        <th class="th">long</th>
+        <th class="th">float</th>
+        <th class="th">complex</th>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">10</td>
+        <td class ="td">51924361L</td>
+        <td class ="td">0.0</td>
+        <td class ="td">3.14j</td>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">100</td>
+        <td class ="td">-0x19323L</td>
+        <td class ="td">15.20</td>
+        <td class ="td">45.j</td>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">-786</td>
+        <td class ="td">0122L</td>
+        <td class ="td">-21.9</td>
+        <td class ="td">9.322e-36j</td>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">080</td>
+        <td class ="td">0xDEFABCECBDAECBFBAEl	</td>
+        <td class ="td">32.3+e18</td>
+        <td class ="td">.876j</td>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">-0490</td>
+        <td class ="td">535633629843L</td>
+        <td class ="td">-90.</td>
+        <td class ="td">-.6545+0J</td>
+    </tr>
+   
+</table>
+<ul class="content-bulletlist">
+    <li>Python allows you to use a lowercase l with long, but it is recommended that you use only an uppercase L to avoid confusion with the number 1. Python displays long integers with an uppercase L.</li>
+    <li>A complex number consists of an ordered pair of real floating-point numbers denoted by x + yj, where x and y are the real numbers and j is the imaginary unit.
+
+    </li>
+   
+    
+</ul>
+<h3 class="subtitle">Python Strings</h3>
+        
+        <p class="content">
+            Strings in Python are identified as a contiguous set of characters represented in the quotation marks. Python allows for either pairs of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) with indexes starting at 0 in the beginning of the string and working their way from -1 at the end.
+        </p>
+
+<p class="content">
+    The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator. For example −
+</p>
+<aside class="code-frame">
+    <p class="code">
+        <span class="brackets">#!/usr/bin/python</span> <br>
+       <span class="function"> str = 'Hello World!</span><br>
+        <span class="function">print str</span><span class="brackets"># Prints complete string</span> <br>
+        <span class="function">print str[0]</span> <span class="brackets">  # Prints first character of the string</span> <br>
+        <span class="function">print str[2:5] </span></span><span class="brackets"># Prints characters starting from 3rd to 5th</span> <br>
+        <span class="function">print str[2:] </span><span class="brackets"># Prints string starting from 3rd character</span> <br>
+        <span class="function">print str * 2 </span> <span class="brackets">   # Prints string two times</span> <br>
+        <span class="function">print str + "TEST" </span></span><span class="brackets"># Prints concatenated string</span> <br>
+
+    
+       
+    </p>
+</aside>
+<p class="content">
+    This will produce the following result −
+</p>
+<aside class="code-frame">
+    <p class="code">
+<span class="function"> Hello World!</span><br>
+<span class="function"> H</span><br>
+<span class="function"> llo</span><br>
+<span class="function"> llo World!</span><br>
+<span class="function"> Hello World!Hello World!</span><br>
+<span class="function"> Hello World!TEST</span><br>
+
+</p></aside>
+
+<h3 class="subtitle">Python Lists</h3>
+
+<p class="content">
+    Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square brackets ([]). To some extent, lists are similar to arrays in C. One difference between them is that all the items belonging to a list can be of different data type.
+</p>
+
+<p class="content">
+    The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition operator. For example −
+    </p>
+    <aside class="code-frame">
+        <p class="code">
+            <span class="brackets">#!/usr/bin/python</span> <br>
+           <span class="function"> list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]</span><br>
+           <span class="function"> tinylist = [123, 'john']</span><br>
+            <span class="function">print list </span><span class="brackets"># Prints complete list</span> <br>
+            <span class="function">print list[0] </span> <span class="brackets">  # Prints first element of the list</span> <br>
+            <span class="function">print list[1:3] </span></span><span class="brackets"># Prints elements starting from 2nd till 3rd </span> <br>
+            <span class="function">print list[2:] </span><span class="brackets"># Prints  elements starting from 3rd element</span> <br>
+            <span class="function">print tinylist * 2 </span> <span class="brackets">   # Prints list two times</span> <br>
+            <span class="function"> print list + tinylist</span></span><span class="brackets"># Prints  concatenated lists</span> <br>
+    
+        
+           
+        </p>
+    </aside>
+
+<p class="content">
+    This produce the following result −
+</p>
+<aside class="code-frame">
+    <p class="code">
+<span class="function">['abcd', 786, 2.23, 'john', 70.2]</span><br>
+        <span class="function">abcd</span> <br>
+        <span class="function">[786, 2.23]</span><br>
+        <span class="function">[2.23, 'john', 70.2]</span><br>
+        <span class="function">[123, 'john', 123, 'john']</span><br>
+        <span class="function">['abcd', 786, 2.23, 'john', 70.2, 123, 'john']</span><br>
+    </p></aside>
+<h4>Python Tuples</h4>
+<p class="content">
+    A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parentheses.
+
+
+</p>
+
+<p class="content">
+    The main differences between lists and tuples are: Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists. For example −
+
+
+</p>
+<aside class="code-frame">
+    <p class="code">
+        <span class="brackets">#!/usr/bin/python</span> <br>
+       <span class="function"> tuple = ( 'abcd', 786 , 2.23, 'john', 70.2  )</span><br>
+       <span class="function"> tinytuple = (123, 'john')</span><br>
+        <span class="function">print tuple </span><span class="brackets"> # Prints the complete tuple</span> <br>
+        <span class="function">print tuple[0]  </span> <span class="brackets"> # Prints first element of the tuple</span> <br>
+        <span class="function">print tuple[1:3]  </span></span><span class="brackets"> # Prints elements of the tuple starting from 2nd till 3rd </span> <br>
+        <span class="function">print list[2:] </span><span class="brackets"> # Prints elements of the tuple starting from 3rd element</span> <br>
+        <span class="function">print tinytuple * 2   </span> <span class="brackets">    # Prints the contents of the tuple twice</span> <br>
+        <span class="function"> print tuple + tinytuple </span></span><span class="brackets"># Prints concatenated tuples</span> <br>
+
+    
+       
+    </p>
+</aside>
+
+
+<p class="content">
+    This produce the following result −
+</p>
+<aside class="code-frame">
+    <p class="code">
+<span class="function">['abcd', 786, 2.23, 'john', 70.2]</span><br>
+        <span class="function">abcd</span> <br>
+        <span class="function">[786, 2.23]</span><br>
+        <span class="function">[2.23, 'john', 70.2]</span><br>
+        <span class="function">[123, 'john', 123, 'john']</span><br>
+        <span class="function">['abcd', 786, 2.23, 'john', 70.2, 123, 'john']</span><br>
+    </p></aside>
+<p class="content">
+    The following code is invalid with tuple, because we attempted to update a tuple, which is not allowed. Similar case is possible with lists −
+</p>
+<aside class="code-frame">
+    <p class="code">
+        <span class="brackets">#!/usr/bin/python</span> <br>
+       <span class="function"> tuple = ( 'abcd', 786 , 2.23, 'john', 70.2  )</span><br>
+       <span class="function"> list = [ 'abcd', 786 , 2.23, 'john', 70.2  ]</span><br>
+        <span class="function">tuple[2] = 1000 </span><span class="brackets"> # Invalid syntax with tuple</span> <br>
+        <span class="function">list[2] = 1000  </span> <span class="brackets"> # Valid syntax with list </span> <br>
+       
+
+    
+       
+    </p>
+</aside>
+<h4>Python Dictionary</h4>
+<p class="content">
+    Python's dictionaries are kind of hash table type. They work like associative arrays or hashes found in Perl and consist of key-value pairs. A dictionary key can be almost any Python type, but are usually numbers or strings. Values, on the other hand, can be any arbitrary Python object.
+</p>
+
+<p class="content">
+    Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([]). For example −
+</p>
+<aside class="code-frame">
+    <p class="code">
+        <span class="brackets">#!/usr/bin/python</span> <br>
+       <span class="function"> dict = {}</span><br>
+       <span class="function"> dict['one'] = "This is one"</span><br>
+        <span class="function">dict[2]     = "This is two" </span><span class="brackets"> # Prints the complete tuple</span> <br>
+        <span class="function">tinydict = {'name': 'john','code':6734, 'dept': 'sales'}</span><br>
+        <br>
+        <span class="function">print dict['one']    </span></span><span class="brackets"> # Prints value for 'one' key</span> <br>
+        <span class="function">print dict[2]</span><span class="brackets">    # Prints value for 2 key</span> <br>
+        <span class="function">print tinydict      </span> <span class="brackets">    # Prints complete dictionary</span> <br>
+        <span class="function">print tinydict.keys() </span></span><span class="brackets">  # Prints all the keys</span> <br>
+        <span class="function">print tinydict.values() </span></span><span class="brackets"> # Prints all the values</span> <br>
+
+    
+       
+    </p>
+</aside>
+<p class="content">
+    This produce the following result −
+</p>
+<aside class="code-frame">
+    <p class="code">
+        
+       <span class="function"> This is one</span><br>
+       <span class="function"> This is two</span><br>
+        <span class="function">{'dept': 'sales', 'code': 6734, 'name': 'john'}</span><br>
+        <span class="function">['dept', 'code', 'name'] </span><br>
+        <span class="function">['sales', 6734, 'john'] </span><br>
+
+    
+       
+    </p>
+</aside>
+<p class="content">
+    Dictionaries have no concept of order among elements. It is incorrect to say that the elements are "out of order"; they are simply unordered.
+</p>
+
+<h4>Data Type Conversion</h4>
+<p class="content">
+    Sometimes, you may need to perform conversions between the built-in types. To convert between types, you simply use the type name as a function.
+</p>
+<p class="content">
+    There are several built-in functions to perform conversion from one data type to another. These functions return a new object representing the converted value.
+</p>
+<table class="content-table">
+    <tr class="tr">
+        <th class="th">Operator</th>
+        <th class="th">Description</th>
+        <th class="th">Example</th>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">in</td>
+        <td class ="td">Evaluates to true if it finds a variable in the specified sequence and false otherwise.</td>
+        <td class ="td">x in y, here in results in a 1 if x is a member of sequence y.</td>
+    </tr>
+    <tr class="tr">
+        <td class ="td">not in</td>
+        <td class ="td">Evaluates to true if it does not finds a variable in the specified sequence and false otherwise.</td>
+        <td class ="td">x not in y, here not in results in a 1 if x is not a member of sequence y.</td>
+    </tr>
+    
+   
+</table>
+<h3 class="subtitle">Python Identity Operators</h3>
+<p class="content">
+    Identity operators compare the memory locations of two objects. There are two Identity operators explained below −
+</p>
+<table class="content-table">
+    <tr class="tr">
+        <th class="th">Operator</th>
+        <th class="th">Description</th>
+        <th class="th">Example</th>
+    </tr>
+    <tr  class="tr">
+        <td class ="td">is</td>
+        <td class ="td">Evaluates to true if the variables on either side of the operator point to the same object and false otherwise</td>
+        <td class ="td">x is y, here is results in 1 if id(x) equals id(y).</td>
+    </tr>
+    <tr class="tr">
+        <td class ="td">is not</td>
+        <td class ="td">Evaluates to false if the variables on either side of the operator point to the same object and true otherwise.</td>
+        <td class ="td">x is not y, here is not results in 1 if id(x) is not equal to id(y).</td>
+    </tr>
+    
+   
+</table>
+<h3 class="subtitle">Python Operators Precedence</h3>
+<p class="content">
+    The following table lists all operators from highest precedence to lowest.
+</p>
+<table class="content-table">
+    <tr class="tr">
+        <th class="th">Sr.No.</th>
+        <th class="th">Function & Description</th>
+        
+    </tr>
+    <tr  class="tr">
+        <td class ="td">1</td>
+        <td class ="td">int(x [,base])<br>
+
+            Converts x to an integer. base specifies the base if x is a string.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">2</td>
+        <td class ="td">long(x [,base] )<br>
+
+            Converts x to a long integer. base specifies the base if x is a string.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">3</td>
+        <td class ="td">float(x)<br>
+
+            Converts x to a floating-point number.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">4</td>
+        <td class ="td">complex(real [,imag])<br>
+
+            Creates a complex number.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">5</td>
+        <td class ="td">str(x)<br>
+
+            Converts object x to a string representation.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">6</td>
+        <td class ="td">repr(x)<br>
+
+            Converts object x to an expression string.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">7</td>
+        <td class ="td">eval(str)<br>
+
+            Evaluates a string and returns an object.</td>
+     
+    </tr>
+    <tr  class="tr">
+        <td class ="td">8</td>
+        <td class ="td">tuple(s)<br>
+
+            Converts s to a tuple.</td>
+     
+    </tr>
+    <tr class="tr">
+        <td class ="td">9</td>
+        <td class ="td">list(s)<br>
+
+            Converts s to a list.</td>
+      
+    </tr>
+    <tr class="tr">
+        <td class ="td">10</td>
+        <td class ="td">set(s)<br>
+
+            Converts s to a set.</td>
+       
+    </tr>
+    
+    <tr class="tr">
+        <td class ="td">11</td>
+        <td class ="td">dict(d)<br>
+
+            Creates a dictionary. d must be a sequence of (key,value) tuples.</td>
+       
+    </tr>
+    
+    <tr class="tr">
+        <td class ="td">12</td>
+        <td class ="td">	
+            frozenset(s)<br>
+
+            Converts s to a frozen set.</td>
+       
+    </tr>
+    
+   
+</table> 
+
+    </section>
+<%- include ("partials/footer") -%>

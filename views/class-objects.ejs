@@ -1,0 +1,174 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+<section class="ftco-content">
+    <h2 class="page-title">Object Oriented</h2>
+    <nav class="links">
+        <button class="btn-links">PDF Version</button>
+        <button class="btn-links" onclick="location.href='/date-time'">Date & Time </button>
+        <button class="btn-links" onclick="location.href='/functions'">Functions</button>
+        <button class="btn-links" onclick="location.href='/modules'">Modules </button>
+        <button class="btn-links" onclick="location.href='/fileio'">FileIO </button>
+        <button class="btn-links" onclick="location.href='/exceptions'">exceptions </button>
+
+    </nav>
+    <p class="content">
+        Python has been an object-oriented language since it existed. Because of this,
+        creating and using classes and objects are downright easy. This chapter helps you become an expert in using Python's object-oriented programming support.<br>
+        If you do not have any previous experience with object-oriented (OO) programming, you may want to consult an introductory course on it or at least a tutorial
+         of some sort so that you have a grasp of the basic concepts.<br>
+         However, here is small introduction of Object-Oriented Programming (OOP) to bring you at speed −
+    </p>
+    <h3 class="subtitle">Overview of OOP Terminology</h3>
+    <ul class="content-bulletlist">
+        <li><b>Class -</b> A user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.</li>
+        <li><b>Class variable −</b> A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instance variables are.</li>
+        <li><b>Data member − </b>  A class variable or instance variable that holds data associated with a class and its objects.</li>
+        <li><b>Function overloading −</b> The assignment of more than one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.</li>
+        <li><b>Instance variable −</b> A variable that is defined inside a method and belongs only to the current instance of a class.</li>
+        <li><b>Inheritance − </b> The transfer of the characteristics of a class to other classes that are derived from it.</li>
+        <li><b>Instance −</b> An individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.</li>
+        <li><b>Instantiation − </b> The creation of an instance of a class.</li>
+        <li><b>Method −</b> A special kind of function that is defined in a class definition.</li>
+        <li><b>Object − </b> A unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods.</li>
+        <li><b>Operator overloading −</b> The assignment of more than one function to a particular operator.   </li>
+    </ul>
+    <h3 class="subtitle">Creating Classes</h3>
+    <p class="content">
+        The class statement creates a new class definition. The name of the class immediately follows the keyword class followed by a colon as follows −
+    </p>
+    <aside class="code-frame">
+        <p class="code">
+            <span class="function">class ClassName:<br>
+                'Optional class documentation string'<br>
+                class_suite</span><br>
+        </p>
+    </aside>
+    <ul class="content-bulletlist">
+        <li> The class has a documentation string, which can be accessed via ClassName.__doc__.</li>
+        <li> The class_suite consists of all the component statements defining class members, data attributes and functions.</li>
+    </ul>
+    <h3 class="subtitle">Example</h3>
+    <p class="content">
+        Following is the example of a simple Python class −
+    </p>
+    <aside class="code-frame">
+        <p class="code">
+            <span class="function">class Employee:</span><br>
+            <span class="function"> class </span><span class="disptxt">Employee: </span><span class="disptxt">'Common base class for all employees'</span><br>
+            <span class="function">empCount = 0</span><br>
+            <br>
+            <span class="function">def __init__ </span><span class="brackets">(</span><span class="disptxt">self, name, salary</span><span class="brackets">):</span><br>
+            <span class="function"> self.name = name </span><br>
+            <span class="function"> self.salary = salary </span><br>
+            <span class="function"> Employee.empCount += 1 </span><br>
+            <span class="function">def displayCount </span><span class="brackets">(</span><span class="disptxt">self</span><span class="brackets">):</span><br>
+            <span class="function"> print </span><span class="disptxt">"Total Employee %d"</span><span class="function"> % Employee.empCount </span><br>
+            <span class="function">def displayEmployee </span><span class="brackets">(</span><span class="disptxt">self</span><span class="brackets">):</span><br>
+            <span class="function"> print</span><span class="disptxt">"Name : ",</span><span class="function"> self.name,</span><span class="disptxt">", Salary: ",</span><span class="function"> self.salary</span>
+        </p>
+    </aside>
+    <ul class="content-bulletlist">
+        <li> The variable empCount is a class variable whose value is shared among all instances of a this class. This can be accessed as Employee.empCount from inside the class or outside the class.</li>
+        <li> The first method __init__() is a special method, which is called class constructor or initialization method that Python calls when you create a new instance of this class.</li>
+        <li> You declare other class methods like normal functions with the exception that the first argument to each method is self. Python adds the self argument to the list for you; you do not need to include it when you call the methods.</li>
+    </ul>
+
+    <h3 class="subtitle">Creating Instance Objects</h3>
+    <p class="content">
+        To create instances of a class, you call the class using class name and pass in whatever arguments its __init__ method accepts.
+    </p>
+    <aside class="code-frame">
+        <p class="code">
+            <span class="function">"This would create first object of Employee class"<br>
+                emp1 = Employee("Zara", 2000)<br>
+                "This would create second object of Employee class"<br>
+                emp2 = Employee("Manni", 5000)<br></span><br>
+        </p>
+    </aside>
+    <h3 class="subtitle">Accessing Attributes</h3>
+    <p class="content">
+        You access the object's attributes using the dot operator with object. Class variable would be accessed using class name as follows −
+    </p>
+
+    <aside class="code-frame">
+        <p class="code">
+            <span class="function"> emp1.displayEmployee()<br>
+                emp2.displayEmployee()<br>
+                print "Total Employee %d" % Employee.empCount<br></span><br>
+        </p>
+    </aside>
+    <p class="content">
+        Now, putting all the concepts together −
+    </p>
+    <aside class="code-frame">
+        <p class="code">
+            <span class="function">#!/usr/bin/python</span><br>
+            <span class="function"> class Employee: </span><br>
+            <span class="disptxt">'Common base class for all employees'</span>
+            <span class="function"> empCount = 0 </span><br>
+            <br>
+            <span class="function">def __init__ </span><span class="brackets">(</span><span class="disptxt">self, name, salary</span><span class="brackets">):</span><br>
+            <span class="function"> self.name = name </span><br>
+            <span class="function"> self.salary = salary </span><br>
+            <span class="function"> Employee.empCount += 1 </span><br>
+            <br>
+            <span class="function">def displayCount </span><span class="brackets">(</span><span class="disptxt">self</span><span class="brackets">):</span><br>
+            <span class="function"> print </span><span class="disptxt">"Total Employee %d"</span><span class="function"> % Employee.empCount </span><br>
+            <span class="function">def displayEmployee </span><span class="brackets">(</span><span class="disptxt">self</span><span class="brackets">):</span><br>
+            <span class="function"> print</span><span class="disptxt">"Name : ",</span><span class="function"> self.name,</span><span class="disptxt">", Salary: ",</span><span class="function"> self.salary</span>
+            <br>
+            <span class="disptxt">"This would create first object of Employee class"</span>
+            <span class="function">emp1= Employee </span><span class="brackets">(</span><span class="disptxt">"Zara", 2000</span><span class="brackets">):</span></span>
+            <span class="disptxt">"This would create second object of Employee class"</span>
+            <span class="function">emp1= Employee </span><span class="brackets">(</span><span class="disptxt">"Manni", 5000</span><span class="brackets">):</span></span>
+            <span class="function">emp1.displayEmployee() </span>
+            <span class="function">emp2.displayEmployee() </span>
+            <span class="function">print </span><span class="disptxt">"Total Employee %d"</span><span class="function">% Employee.empCount</span>
+        </p>
+    </aside>
+    <p class="content">
+        When the above code is executed, it produces the following result −
+    </p>
+    <aside class="code-frame">
+        <p class="content">
+            Name :  Zara ,Salary:  2000<br>
+            Name :  Manni ,Salary:  5000<br>
+            Total Employee 2
+        </p>
+    </aside>
+    <p class="content">
+        You can add, remove, or modify attributes of classes and objects at any time −
+    </p>
+    <aside class="code-frame">
+        <p class="content">
+            emp1.age = 7  # Add an 'age' attribute.<br>
+            emp1.age = 8  # Modify 'age' attribute.<br>
+            del emp1.age  # Delete 'age' attribute.
+        </p>
+    </aside>
+    <p class="content">
+        Instead of using the normal statements to access attributes, you can use the following functions −
+    </p>
+    <ul class="content-bulletlist">
+        <li> The <b>getattr(obj, name[, default])</b> − to access the attribute of object.</li>
+        <li> The <b>hasattr(obj,name)</b> − to check if an attribute exists or not.</li>
+        <li> The <b>setattr(obj,name,value)</b> − to set an attribute. If attribute does not exist, then it would be created.</li>
+        <li> The <b>delattr(obj, name) </b> −− to delete an attribute.</li>
+    </ul>
+    <aside class="code-frame">
+        <p class="content">
+            hasattr(emp1, 'age')    # Returns true if 'age' attribute exists<br>
+            getattr(emp1, 'age')    # Returns value of 'age' attribute<br>
+            setattr(emp1, 'age', 8) # Set attribute 'age' at 8<br>
+            delattr(empl, 'age')    # Delete attribute 'age'
+        </p>
+    </aside>
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/exceptions'"><i class="fa fa-angle-left"></i>Previous Page</button>
+            <button class="btn-pglinks">PDF Preview</button>
+        </nav>
+</section>
+
+<%- include ("partials/footer") -%>

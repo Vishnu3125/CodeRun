@@ -1,0 +1,351 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+    <section class="ftco-content">
+
+        <h2 class="page-title">Functions</h2>
+        <nav class="links">
+            <button class="btn-links">PDF Version</button>
+            <button class="btn-links" onclick="location.href='/date-time'">Date & Time</button>
+            <button class="btn-links" onclick="location.href='/modules'">Modules </button>
+            <button class="btn-links" onclick="location.href='/fileio'">FileIO </button>
+            <button class="btn-links" onclick="location.href='/exceptions'">exceptions </button>
+            <button class="btn-links" onclick="location.href='/class-objects'">class-objects </button>
+        </nav>
+        <p class="content">
+            A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.<br>
+            As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called user-defined functions.
+        </p>
+
+        <h3 class="subtitle">Defining a Function</h3>
+        <p class="content">
+            You can define functions to provide the required functionality. Here are simple rules to define a function in Python.
+        </p>
+        <ul class="content-bulletlist">
+            <li> Function blocks begin with the keyword def followed by the function name and parentheses ( ( ) ).</li>
+            <li> Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.</li>
+            <li> The first statement of a function can be an optional statement - the documentation string of the function or docstring.</li>
+            <li> The code block within every function starts with a colon (:) and is indented.</li>
+            <li> The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.</li>
+        </ul>
+
+        <h3 class="subtittle">Syntax</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">def functionname( parameters ):</span><br>
+                <span class="function">"function_docstring"</span><br>
+                <span class="function">function_suite</span><br>
+                <span class="function">return [expression]</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            By default, parameters have a positional behavior and you need to inform them in the same order that they were defined.
+        </p>
+
+        <h3 class="subtitle">Example</h3>
+        <p class="content">The following function takes a string as input parameter and prints it on standard screen.</p>
+
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">def printme</span> <span class="brackets">(</span><span class="disptxt"> str </span><span class="brackets">)</span>:
+                <span class="function">"This prints a passed string into this function"</span><br>
+                <span class="function">print str</span><br>
+                <span class="function">return</span>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Calling Function</h3>
+        <p class="content">
+            Defining a function only gives it a name, specifies the parameters that are to be included in the function and structures the blocks of code.
+            Once the basic structure of a function is finalized, you can execute it by calling it from another function or directly from the Python prompt.
+            Following is the example to call printme() function −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function">#Function definition is as above example</span><br>
+                <br>
+                <span class="function">#Call to printme function</span><br>
+                <span class="function">printme</span> <span class="brackets">(</span><span class="disptxt">"first call to user defined function!"</span><span class="brackets">)</span>;<br>
+                <span class="function">printme</span> <span class="brackets">(</span><span class="disptxt">"Second call to the same function"</span><span class="brackets">)</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                first call to user defined function!<br>
+                Second call to the same function
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Pass by reference vs value</h3>
+        <p class="content">
+            All parameters (arguments) in the Python language are passed by reference.
+            It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                <span class="function">def</span> <span class="function">changeme</span> <span class="brackets">(</span><span class="disptxt">mylist</span><span class="brackets">)</span>:<br>
+                <span class="function">"This changes a passed list into this function"</span><br>
+                <span class="function">mylist.append</span><span class="brackets">(</span><span class="disptxt">[1,2,3,4]</span><span class="brackets">)</span>;<br>
+                <span class="function">print</span><span class="brackets"></span><span class="disptxt"></span><span class="brackets">"Values inside the function: ",</span><span class="function">mylist</span>;<br>
+                <span class="function">return</span>
+                <br>
+                <span class="function"># Now you can call changeme function</span><br>
+                <span class="function">mylist = [10,20,30];</span><br>
+                <span class="function">changeme</span> <span class="brackets">(</span><span class="disptxt">mylist</span><span class="brackets">)</span>;<br>
+                <span class="function">print</span> <span class="brackets"></span><span class="disptxt">"Values outside the function: ",</span><span class="brackets"></span> mylist;
+            </p>
+        </aside>
+        <p class="content">
+            Here, we are maintaining reference of the passed object and appending values in the same object. So, this would produce the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Values inside the function:  [10, 20, 30, [1, 2, 3, 4]]<br>
+                Values outside the function:  [10, 20, 30, [1, 2, 3, 4]]
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Function Arguments</h3>
+        <p class="content">
+            You can call a function by using the following types of formal arguments −
+        </p>
+        <ul class="content-bulletlist">
+            <li> Required arguments</li>
+            <li> Keyword arguments</li>
+            <li> Default arguments</li>
+            <li> Variable-length arguments</li>
+        </ul>
+
+        <h3 class="subtitle">Required Arguments</h3>
+        <p class="content">
+            Required arguments are the arguments passed to a function in correct positional order. Here, the number of arguments in the function call should match exactly with the function definition.
+            <br>
+            To call the function printme(), you definitely need to pass one argument, otherwise it gives a syntax error as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                <span class="function">def printme</span> <span class="brackets">(</span><span class="disptxt"> str </span><span class="brackets">)</span>:<br>
+                <span class="function"></span> <span class="brackets"></span><span class="disptxt">"This prints a passed string into this function"</span><span class="brackets"></span>;<br>
+                <span class="function">print str</span><br>
+                <span class="function">return</span>;<br>
+                <br>
+                <span class="function"># Now you can call printme function</span><br>
+                <span class="function">printme </span> <span class="brackets">( )</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Traceback (most recent call last):<br>
+                File "test.py", line 11, in module <br>
+                printme();<br>
+                TypeError: printme() takes exactly 1 argument (0 given)<br>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Keyword Arguments</h3>
+        <p class="content">
+            Keyword arguments are related to the function calls. When you use keyword arguments in a function call, the caller identifies the arguments by the parameter name.
+            <br>
+            This allows you to skip arguments or place them out of order because the Python interpreter is able to use the keywords provided to match the values with parameters. You can also make keyword calls to the printme() function in the following ways −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                <span class="function">def printme</span> <span class="brackets">(</span><span class="disptxt"> str </span><span class="brackets">)</span>:<br>
+                <span class="function"></span> <span class="brackets"></span><span class="disptxt">"This prints a passed string into this function"</span><span class="brackets"></span>;<br>
+                <span class="function">print str</span><br>
+                <span class="function">return</span>;<br>
+                <br>
+                <span class="function"># Now you can call printme function</span><br>
+                <span class="function">printme </span> <span class="brackets">(</span><span class="function">str=  </span><span class="disptxt">"My string"</span><span class="brackets">)</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                My string
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Default Arguments</h3>
+        <p class="content">
+            A default argument is an argument that assumes a default value if a value is not provided in the function call for that argument. The following example gives an idea on default arguments, it prints default age if it is not passed −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                <span class="function">def printinfo</span> <span class="brackets">(</span><span class="disptxt">name, age = 35 </span><span class="brackets">)</span>:
+                <span class="function"></span><span class="disptxt">"This prints a passed string into this function"</span>;<br>
+                <span class="function">print </span></span><span class="disptxt">"Name: ",</span>name<br>
+                <span class="function">print </span></span><span class="disptxt">"Age: ",</span>age<br>
+                <span class="function">return</span>;<br>
+                <br>
+                <span class="function"># Now you can call printinfo function</span><br>
+                <span class="function">printinfo</span> <span class="brackets">(</span><span class="disptxt">age=50 , name="miki" </span><span class="brackets">)</span>;<br>
+                <span class="function">print</span> <span class="brackets">(</span><span class="disptxt"> name="miki" </span><span class="brackets">)</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Name:  miki<br>
+                Age  50<br>
+                Name:  miki<br>
+                Age  35<br>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Variable-length Arguments</h3>
+        <p class="content">
+            You may need to process a function for more arguments than you specified while defining the function. These arguments are called variable-length arguments and are not named in the function definition, unlike required and default arguments.
+            <br>
+            Syntax for a function with non-keyword variable arguments is this −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                def functionname([formal_args,] *var_args_tuple ):<br>
+                "function_docstring"<br>
+                function_suite<br>
+                return [expression]<br>
+            </p>
+        </aside>
+        <p class="content">
+            An asterisk (*) is placed before the variable name that holds the values of all nonkeyword variable arguments. This tuple remains empty if no additional arguments are specified during the function call. Following is a simple example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                <span class="function">def printinfo</span> <span class="brackets">(</span><span class="disptxt">  arg1, *vartuple </span><span class="brackets">)</span>;<br>
+                <span class="function"></span><span class="disptxt">"This prints a variable passed arguments"</span>;<br>
+                <span class="function">print</span><span class="disptxt">"Output is: "</span>;<br>
+                <span class="function">for var in</span> vartuple:<br>
+                <span class="function">print var</span><br>
+                <span class="function">return</span>;<br>
+                <br>
+                <span class="function"># Now you can call printinfo function</span><br>
+                <span class="function">printinfo</span> <span class="brackets">(</span><span class="disptxt">10</span><span class="brackets">)</span>;
+                <span class="function">printinfo</span> <span class="brackets">(</span><span class="disptxt">( 70,60,50 )</span><span class="brackets">)</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Output is:<br>
+                10<br>
+                Output is:<br>
+                70<br>
+                60<br>
+                50<br>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">The Anonymous Functions</h3>
+        <p class="content">
+            These functions are called anonymous because they are not declared in the standard manner by using the def keyword. You can use the lambda keyword to create small anonymous functions.
+        </p>
+        <ul class="content-bulletlist">
+            <li>Lambda forms can take any number of arguments but return just one value in the form of an expression. They cannot contain commands or multiple expressions.</li>
+            <li>An anonymous function cannot be a direct call to print because lambda requires an expression</li>
+            <li>Lambda functions have their own local namespace and cannot access variables other than those in their parameter list and those in the global namespace.</li>
+            <li>Although it appears that lambda's are a one-line version of a function, they are not equivalent to inline statements in C or C++, whose purpose is by passing function stack allocation during invocation for performance reasons.</li>
+        </ul>
+
+        <h3 class="subtitle">Syntax</h3>
+        <p class="content">The syntax of lambda functions contains only a single statement, which is as follows −</p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">lambda [arg1 [,arg2,.....argn]]:expression</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            Following is the example to show how lambda form of function works −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                sum= <span class="function">lamda</span> arg1, arg2: arg1 + arg2;<br>
+                <br>
+                <span class="function"># Now you can call sum as a function</span><br>
+                <span class="function">print</span> <span class="disptxt"> "Value of total : ",</span> sum <span class="brackets">(</span><span class="disptxt">10,20</span><span class="brackets">)</span>;<br>
+                <span class="function">print</span> <span class="disptxt"> "Value of total : ",</span> sum <span class="brackets">(</span><span class="disptxt">20,20</span><span class="brackets">)</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Value of total :  30<br>
+                Value of total :  40
+            </p>
+        </aside>
+
+        <h3 class="subtitle">The return Statement</h3>
+        <p class="content">
+            The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.<br>
+            All the above examples are not returning any value. You can return a value from a function as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function"># Function definition is here</span><br>
+                <br>
+                <span class="function">def</span> sum( arg1, arg2):<br>
+                <span class="function"># Add both the perameter and return them.</span><br>
+                <span class="function">total= </span> arg1 + arg2<br>
+                <span class="function">print</span> <span class="disptxt">"Inside the function : ",</span> total;<br>
+                <span class="function">return </span> total <br>
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Inside the function :  30<br>
+                Outside the function :  30
+            </p>
+        </aside>
+
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/date-time'"><i class="fa fa-angle-left"></i>Previous Page</button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/modules'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+
+
+
+    </section>
+
+
+
+
+<%- include ("partials/footer") -%>

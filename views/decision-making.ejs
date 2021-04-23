@@ -1,0 +1,85 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+    <section class="ftco-content">
+        <h2 class="page-title">Decision Making</h2>
+        <nav class="links">
+            <button class="btn-links" onclick="location.href='/loops'">Loops</button>
+            <button class="btn-links" onclick="location.href='/numbers'">Numbers</button>
+            <button class="btn-links" onclick="location.href='/strings'">Strings</button>
+            <button class="btn-links" onclick="location.href='/lists'">Lists</button>
+            <button class="btn-links" onclick="location.href='/tuples'">Tuples</button>
+            <button class="btn-links" onclick="location.href='/dictionary'">Dictionary</button>
+        </nav>
+        <p class="content">
+            Decision making is anticipation of conditions occurring while execution of the program and specifying actions taken according to the conditions.
+        </p>
+        <p class="content">
+            Decision structures evaluate multiple expressions which produce TRUE or FALSE as outcome. You need to determine which action to take and which statements to execute if outcome is TRUE or FALSE otherwise.
+        </p>
+        <p class="content">
+            Following is the general form of a typical decision making structure found in most of the programming languages −
+        </p>
+        <br />
+        <center>
+          <img src="/images/decision_making.jpg" alt="Explainatory Image" />
+        </center>
+        <br />
+        <p class="content">
+            Python programming language assumes any <strong>non-zero</strong> and <strong>non-null</strong> values as TRUE, and if it is either <strong>zero</strong> or <strong>null</strong>, then it is assumed as FALSE value.
+        </p>
+        <p class="content">
+          Python programming language provides following types of decision making statements. Click the following links to check their detail.
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Statement and Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <span class="heading">if statments</span><br>
+                    An <strong>if statement</strong> consists of a boolean expression followed by one or more statements.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <span class="heading">if...else statements</span><br>
+                    An <strong>if statement</strong> can be followed by an optional <strong>else statement</strong>, which executes when the boolean expression is FALSE.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <span class="heading">nested if statements</span><br>
+                    You can use one <strong>if</strong> or <strong>else if</strong> statement inside another if or else if statement(s).
+                </td>
+            </tr>
+        </table>
+
+        <p class="content">Let us go through each decision making briefly −</p>
+        <h3 class="subtitle">Single Statement Suites</h3>
+        <p class="content">If the suite of an <strong>if</strong> clause consists only of a single line, it may go on the same line as the header statement.</p>
+        <p class="content">Here is an example of a one-line if clause −</p>
+
+        <aside class="code-frame">
+            <p class="code">
+                <span class="comment">#!/usr/bin/python</span><br /><br /> <span class="function">var</span> = <span class="filename">100</span><br /><span class="function">if</span><span class="brackets">(</span>
+                <span class="function"> var </span>==<span class="filename"> 100 </span><span class="bracket">)</span><span class="function"> print </span><span class="disptxt">"Value of expression is 100"</span><br />
+                <span class="function"> print </span><span class="disptxt">"Good bye!"</span>
+            </p>
+        </aside>
+        <p class="content">When the above code is executed, it produces the following result −</p>
+        <p class="code">
+          <span class="filename">Value of expression is 100 <br /> Good bye!</span>
+        </p>
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/basic-operators'">Prev page<i class="fa fa-angle-left"></i></button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/loops'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+    </section>
+<%- include ("partials/footer") -%>

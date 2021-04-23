@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CodeRun</title>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/content.css">
+      <link rel="stylesheet" href="css/header2.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/320f551013.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+ 
+	   <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
+        <a class="navbar-brand logo" href="/"><img src="/images/logo.png">CodeRun</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ">
+          <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/introduction">Learn Python</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/overview">Python - Introduction</a></li>
+                <li><a class="dropdown-item" href="">Python - Basics</a></li>
+                <li><a class="dropdown-item" href="#">Python - Intermediate</a></li>
+                <li><a class="dropdown-item" href="#">Python - Advanced</a></li>
+                </ul>
+          </li>
+		  <li class="nav-item">
+              <a class="nav-link" href="/editor">Code Editor</a>
+            </li>
+        </ul>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/user1.png" class="user-profile">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">View Profile</a>
+              <a class="dropdown-item" href="#">Change Password</a>
+              <a class="dropdown-item" href="/" onclick="location.href = '/logout' ">Logout</a>
+            </div>
+          </div>
+   </div>
+  </nav>

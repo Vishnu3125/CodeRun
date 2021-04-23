@@ -1,0 +1,175 @@
+<%- include("partials/header") -%>
+
+<style>
+  .editor-head {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .editor-div {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .output-div {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0%;
+  }
+
+  .editor {
+    background-color: #d5edf6;
+    border-radius: 25px;
+    margin-top: 1%;
+    width: 100%;
+    height: 40%;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  
+  input[type=text], textarea {
+    @include transition(all 0.30s ease-in-out);
+    outline: none;
+    border: 1px solid #DDDDDD;
+  }
+ 
+  input[type=text]:focus, textarea:focus {
+    @include box-shadow(0 0 5px rgba(81, 203, 238, 1));
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
+
+  .output {
+    background-color: #acdbec;
+    border-radius: 25px;
+    margin-top: 0%;
+    width: 100%;
+    height: 20%;
+    padding-left: 1%;
+    padding-top: 1%;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .button-div {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1%;
+  }
+
+  .button {
+    background-color: #40c4ff;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 8px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    outline: none !important;
+  }
+
+  .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  @media screen and (max-width: 570px) {
+    .editor-head {
+      display: flex;
+      justify-content: center;
+      margin-top: 22%;
+      font-size: 20px;
+    }
+
+    .editor {
+      margin-top: 5%;
+      padding-top: 4%;
+      padding-left: 4%;
+      /* The width is 100%, when the viewport is 800px or smaller */
+    }
+
+    .output {
+      margin-top: 0%;
+      padding-top: 4%;
+      padding-left: 4%;
+      /* The width is 100%, when the viewport is 800px or smaller */
+    }
+
+    .button-div {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+</style>
+
+<form action="/output" method="POST">
+  <div class="editor-div">
+    <h1 style="" class="editor-head">PYTHON CODE EDITOR</h1>
+    <textarea id="editor" name="editor" class="editor" rows="20" cols="50">
+#Write your code here
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+</textarea>
+  </div>
+  <div class="button-div"><input type="submit" value="Run" class="button"></div>
+
+  <div class="output-div">
+    <label for="textarea">Output : </label>
+    <textarea id="output" name="output" class="output" rows="8" cols="50" readonly>
+Your output
+</textarea>
+  </div>
+  <br><br>
+</form>
+<button onclick="myFunction()">Click me</button>
+
+<%- include("partials/footer") -%>
+
+<script>
+  document.getElementById('editor').addEventListener('keydown', function (e) {
+    if (e.key == 'Tab') {
+      e.preventDefault();
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+
+      this.value = this.value.substring(0, start) +
+        "\t" + this.value.substring(end);
+
+      this.selectionStart =
+        this.selectionEnd = start + 1;
+    }
+  });
+
+  // ------------------------------------------------
+
+  function fetch_data() {
+    console.log("running");
+    $.get("/button_api", function (data) {
+      // randomIpsum(text, data)
+      console.log("jquery function");
+      console.log(data);
+      $("#output").html(data);
+    });
+  }
+
+  setInterval(fetch_data, 3000);
+
+  function myFunction(){
+    fetch("https://api.html2pdf.app/v1/generate?url=https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch&apiKey=fH6GXSRXL1hg9wpuuTGAXT63LwyLuZbtZdjsF50Fbm62QY8FZlPFo2Sw1v0VpKJM");
+  }
+  // $("#btn").on("click", function(){
+  //     $.get("/button_api", function(data){
+  //         // randomIpsum(text, data)
+  //         console.log("jquery function");
+  //         console.log(data);
+  //         $("#output").html(data);
+  //   });
+  // });
+</script>

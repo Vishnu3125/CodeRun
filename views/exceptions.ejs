@@ -1,0 +1,323 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+<section class="ftco-content">
+    <h2 class="page-title">Exceptions Handling</h2>
+    <nav class="links">
+        <button class="btn-links">PDF Version</button>
+        <button class="btn-links" onclick="location.href='/date-time'">Date & Time </button>
+        <button class="btn-links" onclick="location.href='/functions'">Functions</button>
+        <button class="btn-links" onclick="location.href='/modules'">Modules </button>
+        <button class="btn-links" onclick="location.href='/fileio'">File IO </button>
+        <button class="btn-links" onclick="location.href='/class-objects'">class-objects </button>
+    </nav>
+    <p class="content">
+        Python provides two very important features to handle any unexpected error in your Python programs and to add debugging capabilities in them −
+    </p>
+    <ul class="content-bulletlist">
+        <li> <b>Exception Handling −</b></b>This would be covered in this tutorial. Here is a list standard Exceptions available in Python: Standard Exceptions</li>
+        <li> <b>Assertions −</b>This would be covered in Assertions in Python tutorial.</li>
+    </ul>
+    <p class="content">
+        List of Standard Exceptions −
+    </p>
+    <table class="content-table">
+        <tr>
+            <th>Sr.No.</th>
+            <th>Exception Name & Description</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>
+                <b>Exception</b><br> Base class for all exceptions
+            </td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>
+                <b>StopIteration</b><br>  Raised when the next() method of an iterator does not point to any object.
+            </td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>
+                <b>SystemExit</b><br>  Raised by the sys.exit() function.
+            </td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>
+                <b>StandardError</b><br>  Base class for all built-in exceptions except StopIteration and SystemExit.
+            </td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>
+                <b>ArithmeticError</b><br>  Base class for all errors that occur for numeric calculation.
+            </td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>
+                <b>OverflowError</b><br>  Raised when a calculation exceeds maximum limit for a numeric type.
+            </td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>
+                <b>FloatingPointError</b><br>  Raised when a floating point calculation fails.
+            </td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>
+                <b>ZeroDivisionError</b><br>  Raised when division or modulo by zero takes place for all numeric types.
+            </td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>
+                <b>AssertionError</b><br>  Raised in case of failure of the Assert statement.
+            </td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>
+                <b>AttributeError</b><br>  Raised in case of failure of attribute reference or assignment.
+            </td>
+        </tr>
+        <tr>
+            <td>11.</td>
+            <td>
+                <b>EOFError</b><br>  Raised when there is no input from either the raw_input() or input() function and the end of file is reached.
+            </td>
+        </tr>
+        <tr>
+            <td>12.</td>
+            <td>
+                <b>ImportError</b><br>  Raised when an import statement fails.
+            </td>
+        </tr>
+        <tr>
+            <td>13.</td>
+            <td>
+                <b>KeyboardInterrupt</b><br>  Raised when the user interrupts program execution, usually by pressing Ctrl+c.
+            </td>
+        </tr>
+        <tr>
+            <td>14.</td>
+            <td>
+                <b>LookupError</b><br>  Base class for all lookup errors.
+            </td>
+        </tr>
+        <tr>
+            <td>15.</td>
+            <td>
+                <b>IndexError</b><br>  Raised when an index is not found in a sequence.
+            </td>
+        </tr>
+    </table>
+    <h3 class="subtitle">Assertions in Python</h3>
+        <p class="content">
+            An assertion is a sanity-check that you can turn on or turn off when you are done with your testing of the program.
+            <br>
+            The easiest way to think of an assertion is to liken it to a raise-if statement (or to be more accurate, a raise-if-not statement). An expression is tested, and if the result comes up false, an exception is raised.
+            <br>
+            Assertions are carried out by the assert statement, the newest keyword to Python, introduced in version 1.5.
+            <br>
+            Programmers often place assertions at the start of a function to check for valid input, and after a function call to check for valid output.
+            <br>
+            The assert Statement
+            When it encounters an assert statement, Python evaluates the accompanying expression, which is hopefully true. If the expression is false, Python raises an AssertionError exception.
+            <br>
+            The <b>syntax</b> for assert is −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">assert Expression[, Arguments]</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            If the assertion fails, Python uses ArgumentExpression as the argument for the AssertionError. AssertionError exceptions can be caught and handled like any other exception using the try-except statement,
+            but if not handled, they will terminate the program and produce a traceback.
+        </p>
+        <h3 class="subtitle">Example</h3>
+        <p class="content">
+            Here is a function that converts a temperature from degrees Kelvin to degrees Fahrenheit. Since zero degrees Kelvin is as cold as it gets,
+                the function bails out if it sees a negative temperature −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"> def </span><span class="disptxt">KelvinToFahrenheit</span></span><span class="brackets">(</span><span class="disptxt">Temperature</span></span><span class="brackets">)</span><br>
+                <span class="function"> return </span></span><span class="brackets">((</span><span class="disptxt">Temperature-273</span></span><span class="brackets">),</span></span><span class="disptxt">*1.8)+32</span><br>
+                <span class="function"> print </span><span class="disptxt">KelvinToFahrenheit</span><span class="brackets">(</span><span class="disptxt">273</span><span class="brackets">)</span>
+                <span class="function"> print int</span><span class="disptxt">KelvinToFahrenheit</span><span class="brackets">(</span><span class="disptxt">505.78</span><span class="brackets">))</span>
+                <span class="function"> print</span><span class="disptxt">KelvinToFahrenheit</span><span class="brackets">(</span><span class="disptxt">-5</span><span class="brackets">)</span>
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                32.0<br>
+                451<br>
+                Traceback (most recent call last):<br>
+                File "test.py", line 9, in module <br>
+                print KelvinToFahrenheit(-5)<br>
+                File "test.py", line 4, in KelvinToFahrenheit<br>
+                assert (Temperature >= 0),"Colder than absolute zero!"<br>
+                AssertionError: Colder than absolute zero!<br>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">What is Exception?</h3>
+        <p class="content">
+            An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions.
+             In general, when a Python script encounters a situation that it cannot cope with, it raises an exception. An exception is a Python object
+             that represents an error.
+            <br>
+            When a Python script raises an exception, it must either handle the exception immediately otherwise it terminates and quits.
+        </p>
+        <h3 class="subtitle">Handling an exception</h3>
+        <p class="content">
+            If you have some suspicious code that may raise an exception, you can defend your program by placing the suspicious code in a try: block.
+            After the try: block, include an except: statement, followed by a block of code which handles the problem as elegantly as possible.
+        </p>
+        <h3 class="subtitle">Syntax</h3>
+        <p class="content">
+            Here is simple syntax of try....except...else blocks −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">try:
+                    You do your operations here;<br>
+                   ......................<br>
+                   except ExceptionI:<br>
+                   If there is ExceptionI, then execute this block.<br>
+                   except ExceptionII:<br>
+                   If there is ExceptionII, then execute this block.<br>
+                   ......................<br>
+                   else:<br>
+                   If there is no exception then execute this block.<br> </span><br>
+            </p>
+        </aside>
+        <p class="content">
+            Here are few important points about the above-mentioned syntax −
+        </p>
+        <ul class="content-bulletlist">
+            <li> A single try statement can have multiple except statements. This is useful when the try block contains statements that may throw different types of exceptions.</li>
+            <li> You can also provide a generic except clause, which handles any exception.</li>
+            <li> After the except clause(s), you can include an else-clause. The code in the else-block executes if the code in the try: block does not raise an exception.</li>
+            <li> The else-block is a good place for code that does not need the try: block's protection.</li>
+        </ul>
+        <h3 class="subtitle">Example</h3>
+        <p class="content">
+            This example opens a file, writes content in the, file and comes out gracefully because there is no problem at all −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"> try: </span><br>
+                <span class="function"> fh= open </span><span class="brackets">(</span><span class="disptxt">"testfile", "w"</span></span><span class="brackets">)</span><br>
+                <span class="function"> fh.write<span class="brackets">(</span> </span><span class="disptxt">"This is my test file for exception handling!!"</span><span class="brackets">)</span>
+                <span class="function"> except IOError: </span><br>
+                <span class="function"> print </span><span class="disptxt">"Error: can\'t find file or read data"</span><br>
+                <span class="function"> else: </span><br>
+                <span class="function"> print</span><span class="disptxt">"Written content in the file successfully"</span><br>
+                <span class="function"> fh.close</span><span class="brackets">(</span><span class="brackets">)</span>
+            </p>
+        </aside>
+        <p class="content">
+            Written content in the file successfully
+        </p>
+        <h3 class="subtitle">The except Clause with No Exceptions</h3>
+        <p class="content">
+            You can also use the except statement with no exceptions defined as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">try:<br>
+                    You do your operations here;<br>
+                    ......................<br>
+                    except:<br>
+                     If there is any exception, then execute this block.<br>
+                    ......................<br>
+                    else:<br>
+                    If there is no exception then execute this block. <br></span><br>
+            </p>
+        </aside>
+
+        <p class="content">
+            This kind of a try-except statement catches all the exceptions that occur. Using this kind of try-except statement is not considered a good programming practice though, because it catches all exceptions but does not make the programmer identify the root cause of the problem that may occur.
+        </p>
+
+        <h3 class="subtitle">The except Clause with Multiple Exceptions</h3>
+        <p class="content">
+            You can also use the same except statement to handle multiple exceptions as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">try:<br>
+                    You do your operations here;<br>
+                    ......................<br>
+                    except(Exception1[, Exception2[,...ExceptionN]]]):<br>
+                    If there is any exception from the given exception list,<br>
+                    then execute this block.<br>
+                    ......................<br>
+                    else:<br>
+                    If there is no exception then execute this block. <br></span><br>
+            </p>
+        </aside>
+
+        <h3 class="subtitle">The try-finally Clause</h3>
+        <p class="content">
+            You can use a finally: block along with a try: block. The finally block is a place to put any code that must execute, whether the try-block raised an exception or not. The syntax of the try-finally statement is this −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">try:<br>
+                    You do your operations here;<br>
+                    ......................<br>
+                    Due to any exception, this may be skipped.<br>
+                    finally:<br>
+                    This would always be executed.<br>
+                    ......................<br></span><br>
+            </p>
+        </aside>
+        <p class="content">
+            You cannot use else clause as well along with a finally clause.
+        </p>
+
+        <h3 class="subtitle">Example</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"> try: </span><br>
+                <span class="function"> fh= open </span><span class="brackets">(</span><span class="disptxt">"testfile", "w"</span></span><span class="brackets">)</span><br>
+                <span class="function"> fh.write<span class="brackets">(</span> </span><span class="disptxt">"This is my test file for exception handling!!"</span><span class="brackets">)</span>
+                <span class="function"> Finally: </span><br>
+                <span class="function"> print </span><span class="disptxt">"Error: can\'t find file or read data"</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            If you do not have permission to open the file in writing mode, then this will produce the following result -
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Error: can't find file or read data
+            </p>
+        </aside>
+
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/fileio'"><i class="fa fa-angle-left"></i>Previous Page</button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/class-objects'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+</section>
+
+<%- include ("partials/footer") -%>

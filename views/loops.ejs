@@ -1,0 +1,100 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+    <section class="ftco-content">
+        <h2 class="page-title">Loops</h2>
+        <nav class="links">
+          <button class="btn-links" onclick="location.href='/decision-making'">Decision Making</button>
+          <button class="btn-links" onclick="location.href='/numbers'">Numbers</button>
+          <button class="btn-links" onclick="location.href='/strings'">Strings</button>
+          <button class="btn-links" onclick="location.href='/lists'">Lists</button>
+          <button class="btn-links" onclick="location.href='/tuples'">Tuples</button>
+          <button class="btn-links" onclick="location.href='/dictionary'">Dictionary</button>
+        </nav>
+        <p class="content">
+           In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times.
+        </p>
+        <p class="content">
+           Programming languages provide various control structures that allow for more complicated execution paths.
+        </p>
+        <p class="content">
+           A loop statement allows us to execute a statement or group of statements multiple times. The following diagram illustrates a loop statement −
+        </p>
+        <br />
+        <center>
+          <img src="/images/loop.jpg" alt="loop image" />
+        </center>
+        <br />
+        <p class="content">
+            Python programming language provides following types of loops to handle looping requirements.
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Loop Type and Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <span class="heading">while loop</span><br>
+                    Repeats a statement or group of statements while a given condition is TRUE. It tests the condition before executing the loop body.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <span class="heading">for loop</span><br>
+                    Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <span class="heading">nested loops</span><br>
+                    You can use one or more loop inside any another while, for or do..while loop.
+                </td>
+            </tr>
+        </table>
+
+        <h3 class="subtitle">Loop Control Statements</h3>
+        <p class="content">Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+        <p class="content">Python supports the following control statements. Click the following links to check their detail.</p>
+        <p class="content">Let us go through the loop control statements briefly</p>
+
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Control Statement and Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <span class="heading">break statement</span><br>
+                    Terminates the loop statement and transfers execution to the statement immediately following the loop.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <span class="heading">continue statement</span><br>
+                    Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <span class="heading">pass statement</span><br>
+                    The pass statement in Python is used when a statement is required syntactically but you do not want any command or code to execute.
+                </td>
+            </tr>
+        </table>
+
+
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/decision-making'">Prev page<i class="fa fa-angle-left"></i></button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/numbers'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+    </section>
+<%- include ("partials/footer") -%>

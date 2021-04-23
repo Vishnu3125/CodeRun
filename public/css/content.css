@@ -1,0 +1,192 @@
+@import url(https://allfont.net/allfont.css?fonts=droid-sans-mono);
+:root {
+    --lightblue: #1687a7;
+    --darkblue: #276678; 
+    --skyblue: #d3e0ea;
+    --bluishgrey: #f6f5f5;
+  }
+
+.ftco-content{
+    margin: 100px 70px 100px 400px;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2.page-title{
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    color: #444444;
+    width: 100%;
+}
+
+.ftco-content .links{
+    display: flex;
+    justify-content: center;
+}
+
+.ftco-content .links .btn-links{
+    outline: none !important;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 15px 10px;
+    color: var(--darkblue);
+    background-color: transparent;
+    border: 2px solid var(--darkblue);
+    border-radius: 5px;
+}
+
+.ftco-content .links .btn-links:hover{
+    color: var(--skyblue);
+    background-color: var(--darkblue);
+    transition: ease-in-out 0.6s;
+}
+
+.ftco-content .content{
+    padding: 5px 0 5px 0;
+    color: #666666;
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-character;
+}
+
+h3.subtitle{
+    padding-top: 8px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    color: #444444;
+    width: 100%;
+}
+
+h4.subtitle{
+    padding-top: 8px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    color: #444444;
+    width: 100%;
+}
+
+.ftco-content .content-bulletlist{
+    list-style-type: disc;
+    list-style: outside;
+    padding: 0 40px;
+    color: #666666;
+    font-size: 18px;
+}
+
+.ftco-content .content-numberlist{
+    list-style-type: lower-roman;
+    list-style: outside;
+    padding: 0 40px;
+    color: #666666;
+    font-size: 18px;
+}
+
+.ftco-content .content-nolist{
+    list-style-type: none;
+    color: #666666;
+    font-size: 18px;
+}
+
+.ftco-content .content-nolist li{
+    padding-bottom: 5px;
+}
+
+.ftco-content .content-bulletlist .topic{
+    display: inline;
+    font-weight: 600;
+}
+
+.ftco-content .code-frame{
+    padding: 20px;
+    background-color: #e0dcdc;
+    border-radius: 3px;
+    margin-bottom: 24px;
+}
+
+.ftco-content .code{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    margin-bottom: 0;
+}
+
+.ftco-content .code span{
+    font-family: 'Courier New', monospace;
+}
+
+span.function{
+    color: blue;
+}
+
+span.brackets{
+    color: brown;
+}
+
+span.disptxt{
+    color: green;
+}
+
+span.comment{
+    color: gray;
+}
+
+span.filename{
+    color: maroon;
+}
+
+.ftco-content .page-links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ftco-content .page-links .btn-pglinks{
+    outline: none !important;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: var(--darkblue);
+    background-color: transparent;
+    border: none;
+}
+
+.ftco-content .page-links .btn-pglinks:hover{
+    color: var(--skyblue);
+    background-color: var(--lightblue);
+    transition: ease-in-out 0.6s;
+}
+
+.ftco-content .page-links .btn-pglinks i{
+    padding: 3px;
+}
+
+hr{
+    margin: 5px 0 !important;
+}
+
+.ftco-content .content-table{
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.ftco-content .content-table,tr,th,td{
+    border: 1px solid var(--darkblue);
+    padding: 10px;
+    font-size: 18px;
+    color: #666666;
+}
+
+.ftco-content .content-table th{
+    background-color: var(--skyblue);
+    color: #555555;
+    text-align: center;
+}
+
+.ftco-content .content-table .heading{
+    text-transform: uppercase;
+    font-weight: 600;
+}

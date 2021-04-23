@@ -1,0 +1,216 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+    <section class="ftco-content">
+        <h2 class="page-title">Tuples</h2>
+        <nav class="links">
+          <button class="btn-links" onclick="location.href='/decision-making'">Decision Making</button>
+          <button class="btn-links" onclick="location.href='/loops'">Loops</button>
+          <button class="btn-links" onclick="location.href='/numbers'">Numbers</button>
+          <button class="btn-links" onclick="location.href='/strings'">Strings</button>
+          <button class="btn-links" onclick="location.href='/lists'">Lists</button>
+          <button class="btn-links" onclick="location.href='/dictionary'">Dictionary</button>
+        </nav>
+        <p class="content">
+          A tuple is a collection of objects which ordered and immutable. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.
+        </p>
+        <p class="content">
+           Creating a tuple is as simple as putting different comma-separated values. Optionally you can put these comma-separated values between parentheses also. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">tup1</span> = <span class="filename">('physics', 'chemistry', 1997, 2000);</span><br />
+                <span class="filename">tup2</span> = <span class="filename">(1, 2, 3, 4, 5 );</span><br />
+                <span class="filename">tup3</span> = <span class="filename">"a", "b", "c", "d";</span><br />
+
+            </p>
+        </aside>
+        <p class="content">
+            The empty tuple is written as two parentheses containing nothing −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">tup1</span> = <span class="filename">();</span><br />
+            </p>
+        </aside>
+        <p class="content">
+            To write a tuple containing a single value you have to include a comma, even though there is only one value −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">tup1</span> = <span class="filename">(50,);</span><br />
+            </p>
+        </aside>
+        <p class="content">
+            Like string indices, tuple indices start at 0, and they can be sliced, concatenated, and so on.
+        </p>
+        <h3 class="subtitle">Accessing Values in Tuples</h3>
+        <p class="content">
+            To access values in tuple, use the square brackets for slicing along with the index or indices to obtain value available at that index. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="comment">#!/usr/bin/python<br /><br /> </span><span class="filename">tup1</span> = (
+                <span class="disptxt">'physics'</span>, <span class="disptxt">'chemistry'</span>, <span class="disptxt">1997</span>, <span class="disptxt">2000</span>); <br />
+                <span class="filename">tup2</span> = (<span class="disptxt">1</span>, <span class="disptxt">2</span>, <span class="disptxt">3</span>, <span class="disptxt">4</span>,
+                 <span class="disptxt">5</span>, <span class="disptxt">6</span>);<br />
+                <span class="filename">print</span> <span class="disptxt">"tup1[0]: "</span>, <span class="filename">tup1</span>[<span class="disptxt">0</span>];<br />
+                <span class="filename">print</span> <span class="disptxt">"tup2[1:5]: "</span>, <span class="filename">tup2</span>[<span class="disptxt">1:5</span>];<br />
+            </p>
+        </aside>
+        <p class="content">
+          When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+          <p class="code">
+              <span class="filename">tup1[0]:  physics</span><br />
+              <span class="filename">tup2[1:5]:  [2, 3, 4, 5]</span><br />
+          </p>
+        </aside>
+        <h3 class="subtitle">Updating Tuples</h3>
+        <p class="content">
+          Tuples are immutable which means you cannot update or change the values of tuple elements. You are able to take portions of existing tuples to create new tuples as the following example demonstrates −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+              <span class="comment">#!/usr/bin/python<br /><br />
+              <span class="filename">tup1</span> = (<span class="function">12</span>, <span class="function">34.56</span>);<br />
+              <span class="filename">tup2</span> = (<span class="disptxt">'abc'</span>, <span class="disptxt">'xyz'</span>);<br /><br />
+              <span class="comment"># Following action is not valid for tuples<br />
+              <span class="comment"># tup1[0] = 100;<br /><br />
+              <span class="comment"># So let's create a new tuple as follows<br /><br />
+              <span class="filename">tup3 = tup1 + tup2;</span><br />
+              <span class="function">print</span><span class="filename"> tup3;</span>
+              </p>
+        </aside>
+        <p class="content">
+          When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+          <p class="code">
+              <span class="filename">(12, 34.56, 'abc', 'xyz')</span><br />
+          </p>
+        </aside>
+        <h3 class="subtitle">Delete Tuple Elements</h3>
+        <p class="content">
+          Removing individual tuple elements is not possible. There is, of course, nothing wrong with putting together another tuple with the undesired elements discarded.
+        </p>
+        <p class="content">
+          To explicitly remove an entire tuple, just use the <strong>del</strong> statement. For example −
+        </p>
+        <aside class="code-frame">
+          <p class="code">
+          <span class="comment">#!/usr/bin/python<br /><br />
+          <span class="function">tup</span> = (<span class="disptxt">'physics'</span>, <span class="disptxt">'chemistry'</span>, <span class="disptxt">1997</span>, <span class="disptxt">2000</span>);<br />
+          <span class="function">print</span><span class="filename"> tup;</span><br />
+          <span class="function">del</span><span class="filename"> tup;</span><br />
+          <span class="function">print</span><span class="disptxt"> "After deleting tup : "</span>;<br />
+          <span class="function">print</span><span class="filename"> tup;</span>
+          </p>
+        </aside>
+        <p class="content">
+        This produces the following result. Note an exception raised, this is because after <strong>del tup</strong> tuple does not exist any more −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">('physics', 'chemistry', 1997, 2000)</span><br />
+                <span class="filename">After deleting tup :</span><br />
+                <span class="filename">Traceback (most recent call last):</span><br />
+                <span class="filename">   File "test.py", line 9, in "<"module">"</span><br />
+                <span class="filename">      print tup;</span><br />
+                <span class="filename">NameError: name 'tup' is not defined</span><br />
+            </p>
+        </aside>
+        <h3 class="subtitle">Basic Tuples Operations</h3>
+        <p class="content">
+          Tuples respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new tuple, not a string.
+        </p>
+        <p class="content">
+          In fact, tuples respond to all of the general sequence operations we used on strings in the prior chapter −
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Python Expression</th>
+                <th>Results</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>len((1, 2, 3))</td>
+                <td>3</td>
+                <td>Length</td>
+            </tr>
+            <tr>
+                <td>(1, 2, 3) + (4, 5, 6)</td>
+                <td>(1, 2, 3, 4, 5, 6)</td>
+                <td>Concatenation</td>
+            </tr>
+            <tr>
+                <td>('Hi!') * 4</td>
+                <td>('Hi!', 'Hi!', 'Hi!', 'Hi!')</td>
+                <td>Repetition</td>
+
+            </tr>
+            <tr>
+                <td>3 in (1, 2, 3)</td>
+                <td>True</td>
+                <td>Membership</td>
+
+            </tr>
+            <tr>
+                <td>for x in (1, 2, 3): print x,</td>
+                <td>1 2 3</td>
+                <td>Iteration</td>
+
+            </tr>
+        </table>
+        <h3 class="subtitle">Built-in Tuple Functions</h3>
+        <p class="content">Python includes the following tuple functions −</p>
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Function with Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <span class="heading">cmp(tuple1, tuple2)</span><br>
+                    Compares elements of both tuples.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <span class="heading">len(tuple)</span><br>
+                    Gives the total length of the tuple.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <span class="heading">max(tuple)</span><br>
+                    Returns item from the tuple with max value.
+                </td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>
+                    <span class="heading">min(tuple)</span><br>
+                    Returns item from the tuple with min value.
+                </td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>
+                    <span class="heading">tuple(seq)</span><br>
+                    Converts a tuple into tuple.
+                </td>
+            </tr>
+          </table>
+          <hr>
+        <nav class="page-links">
+          <button class="btn-pglinks" onclick="location.href='/lists'">Prev page<i class="fa fa-angle-left"></i></button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/dictionary'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+    </section>
+<%- include ("partials/footer") -%>

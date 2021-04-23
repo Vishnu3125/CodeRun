@@ -1,0 +1,164 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+    <section class="ftco-content">
+        <h2 class="page-title">Dictionary</h2>
+        <nav class="links">
+          <button class="btn-links" onclick="location.href='/decision-making'">Decision Making</button>
+          <button class="btn-links" onclick="location.href='/loops'">Loops</button>
+          <button class="btn-links" onclick="location.href='/numbers'">Numbers</button>
+          <button class="btn-links" onclick="location.href='/strings'">Strings</button>
+          <button class="btn-links" onclick="location.href='/lists'">Lists</button>
+          <button class="btn-links" onclick="location.href='/tuples'">Tuples</button>
+        </nav>
+        <p class="content">
+          Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.
+        </p>
+        <p class="content">
+           Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.
+        </p>
+        <h3 class="subtitle">Accessing Values in Dictionary</h3>
+        <p class="content">
+            To access dictionary elements, you can use the familiar square brackets along with the key to obtain its value. Following is a simple example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="comment">#!/usr/bin/python<br /><br /> </span><span class="filename">dict</span> = {
+                <span class="disptxt">'Name'</span>: <span class="disptxt">'Zara'</span>, <span class="disptxt">'Age'</span>: <span class="disptxt">7</span>, <span class="disptxt">'Class'</span>: <span class="disptxt">'First'</span>}<br />
+                <span class="function">print</span> <span class="disptxt">"dict['Name']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'Name'</span>]<br />
+                <span class="function">print</span> <span class="disptxt">"dict['Age']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'Age'</span>]<br />
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">dict['Name']: Zara</span><br />
+                <span class="filename">dict['Age']: 7</span>
+            </p>
+        </aside>
+        <p class="content">
+            If we attempt to access a data item with a key, which is not part of the dictionary, we get an error as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+              <span class="comment">#!/usr/bin/python<br /><br /> </span><span class="filename">dict</span> = {
+              <span class="disptxt">'Name'</span>: <span class="disptxt">'Zara'</span>, <span class="disptxt">'Age'</span>: <span class="disptxt">7</span>, <span class="disptxt">'Class'</span>: <span class="disptxt">'First'</span>}<br />
+              <span class="function">print</span> <span class="disptxt">"dict['Alice']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'Alice'</span>]<br />
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">dict['Alice']:</span><br />
+                <span class="filename">Traceback (most recent call last):</span><br />
+                <span class="filename">   File "test.py", line 4, in "<"module">"</span><br />
+                <span class="filename">      print "dict['Alice']: ", dict['Alice'];</span><br />
+                <span class="filename">KeyError: 'Alice'</span><br />
+            </p>
+        </aside>
+        <h3 class="subtitle">Updating Dictionary</h3>
+        <p class="content">
+          You can update a dictionary by adding a new entry or a key-value pair, modifying an existing entry, or deleting an existing entry as shown below in the simple example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+              <span class="comment">#!/usr/bin/python<br /><br />
+              <span class="filename">dict</span> = {
+              <span class="disptxt">'Name'</span>: <span class="disptxt">'Zara'</span>, <span class="disptxt">'Age'</span>: <span class="disptxt">7</span>, <span class="disptxt">'Class'</span>: <span class="disptxt">'First'</span>}<br />
+              <span class="filename">dict</span>[<span class="disptxt">'Age'</span>] = <span class="disptxt">8</span>; <span class="comment"># update existing entry<br />
+              <span class="filename">dict</span>[<span class="disptxt">'School'</span>] = <span class="disptxt">"DPS School"</span>; <span class="comment"># Add new entry<br />
+              <span class="function">print</span> <span class="disptxt"> "dict['Age']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'Age'</span>]<br />
+              <span class="function">print</span> <span class="disptxt"> "dict['School']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'School'</span>]<br />
+              </p>
+        </aside>
+        <p class="content">
+          When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+          <p class="code">
+              <span class="filename">dict['Age']:  8</span><br />
+              <span class="filename">dict['School']:  DPS School</span>
+          </p>
+        </aside>
+        <h3 class="subtitle">Delete Dictionary Elements</h3>
+        <p class="content">
+          You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also delete entire dictionary in a single operation.
+        </p>
+        <p class="content">
+          To explicitly remove an entire dictionary, just use the <strong>del</strong> statement. Following is a simple example −
+        </p>
+        <aside class="code-frame">
+          <p class="code">
+          <span class="comment">#!/usr/bin/python<br /><br />
+          <span class="filename">dict</span> = {
+          <span class="disptxt">'Name'</span>: <span class="disptxt">'Zara'</span>, <span class="disptxt">'Age'</span>: <span class="disptxt">7</span>, <span class="disptxt">'Class'</span>: <span class="disptxt">'First'</span>}<br />
+          <span class="function">del</span><span class="filename"> dict</span>[<span class="disptxt">'Name'</span>]<span class="comment"> # remove entry with key 'Name'<br />
+          <span class="filename">dict.clear();</span><span class="comment"> # remove all entries in dict<br />
+          <span class="function">del</span><span class="filename"> dict </span>;<br /><span class="comment"> # delete entire dictionary<br />
+            <span class="function">print</span> <span class="disptxt"> "dict['Age']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'Age'</span>]<br />
+            <span class="function">print</span> <span class="disptxt"> "dict['School']: "</span>, <span class="filename">dict</span>[<span class="disptxt">'School'</span>]<br />
+          </p>
+        </aside>
+        <p class="content">
+        This produces the following result. Note that an exception is raised because after <strong>del dict</strong> dictionary does not exist any more −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">dict['Age']:</span><br />
+                <span class="filename">Traceback (most recent call last):</span><br />
+                <span class="filename">   File "test.py", line 8, in <module></span><br />
+                <span class="filename">      print "dict['Age']: ", dict['Age'];;</span><br />
+                <span class="filename">TypeError: 'type' object is unsubscriptable</span><br />
+            </p>
+        </aside>
+        <p class="content">
+          <strong>Note</strong> − del() method is discussed in subsequent section.
+        </p>
+        <h3 class="subtitle">Built-in Dictionary Functions</h3>
+        <p class="content">Python includes the following dictionary functions −</p>
+        <table class="content-table">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Function with Description</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <span class="heading">cmp(dict1, dict2)</span><br>
+                    Compares elements of both dict.
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <span class="heading">len(dict)</span><br>
+                    Gives the total length of the dictionary.
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <span class="heading">str(dict)</span><br>
+                    Produces a printable string representation of a dictionary.
+                </td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>
+                    <span class="heading">type(variable)</span><br>
+                    Returns the type of the passed variable. If passed variable is dictionary, then it would return a dictionary type.
+                </td>
+            </tr>
+          </table>
+          <hr>
+        <nav class="page-links">
+          <button class="btn-pglinks" onclick="location.href='/tuples'">Prev page<i class="fa fa-angle-left"></i></button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/date-time'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+    </section>
+<%- include ("partials/footer") -%>

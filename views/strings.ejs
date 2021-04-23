@@ -1,0 +1,247 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+    <section class="ftco-content">
+        <h2 class="page-title">Strings</h2>
+        <nav class="links">
+          <button class="btn-links" onclick="location.href='/decision-making'">Decision Making</button>
+          <button class="btn-links" onclick="location.href='/loops'">Loops</button>
+          <button class="btn-links" onclick="location.href='/numbers'">Numbers</button>
+          <button class="btn-links" onclick="location.href='/lists'">Lists</button>
+          <button class="btn-links" onclick="location.href='/tuples'">Tuples</button>
+          <button class="btn-links" onclick="location.href='/dictionary'">Dictionary</button>
+        </nav>
+        <p class="content">
+           Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes. Creating strings is as simple as assigning a value to a variable. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">var1</span> = <span class="disptxt">'Hello World!'</span><br />
+                <span class="function">var2</span> = <span class="disptxt">"Python Programming"</span>
+            </p>
+        </aside>
+        <br />
+        <p class="content">
+            You can also delete the reference to a number object by using the del statement. The syntax of the del statement is −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">del </span><span class="filename">var1</span>
+                <span class="filename">[,</span><span class="filename">var2</span>
+                <span class="filename">[,</span><span class="filename">var3</span>
+                <span class="filename">[....,</span><span class="filename">varN</span>
+                <span class="filename">]]]]</span>
+            </p>
+        </aside>
+        <h3 class="subtitle">Accessing Values in Strings</h3>
+        <p class="content">
+          Python does not support a character type; these are treated as strings of length one, thus also considered a substring.
+        </p>
+        <p class="content">
+          To access substrings, use the square brackets for slicing along with the index or indices to obtain your substring. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="comment">#!/usr/bin/python</span><br /><br />
+                <span class="filename">var1</span> = <span class="disptxt">'Hello World!'</span><br />
+                <span class="filename">var2</span> = <span class="disptxt">"Python Programming"</span><br /><br />
+                <span class="function">print </span><span class="disptxt">"var1[0]: "</span>, <span class="filename">var1</span>[<span class="function">0</span>]<br />
+                <span class="function">print </span><span class="disptxt">"var2[1:5]: "</span>, <span class="filename">var2</span>[<span class="function">1:5</span>]
+            </p>
+        </aside>
+        <p class="content">
+          When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">var1[0]:  H</span><br />
+                <span class="filename">var2[1:5]:  ytho</span><br />
+            </p>
+        </aside>
+        <h3 class="subtitle">Updating Strings</h3>
+        <p class="content">
+        You can "update" an existing string by (re)assigning a variable to another string. The new value can be related to its previous value or to a completely different string altogether. For example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="comment">#!/usr/bin/python</span><br /><br />
+                <span class="filename">var1</span> = <span class="disptxt">'Hello World!'</span><br />
+                <span class="function">print </span><span class="disptxt">"Updated String :- "</span>, <span class="filename">var1</span>[<span class="function">:6</span>] + <span class="disptxt">'python' </span>
+            </p>
+        </aside>
+        <p class="content">
+        When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="filename">Updated String :- Hello Python </span><br /><br />
+            </p>
+        </aside>
+        <h3 class="subtitle">Escape Characters</h3>
+          <p class="content">
+          Following table is a list of escape or non-printable characters that can be represented with backslash notation.
+          </p>
+          <p class="content">
+          An escape character gets interpreted; in a single quoted as well as double quoted strings.
+          </p>
+        <table class="content-table">
+            <tr>
+                <th>Backslash notation</th>
+                <th>Hexadecimal character</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>\a</td>
+                <td>0x07</td>
+                <td>Bell or alert</td>
+            </tr>
+            <tr>
+                <td>\cx</td>
+                <td></td>
+                <td>Control-x</td>
+            </tr>
+            <tr>
+                <td>\b</td>
+                <td>0x08</td>
+                <td>Backspace</td>
+
+            </tr>
+            <tr>
+                <td>\M-\C-x</td>
+                <td></td>
+                <td>Meta-Control-x</td>
+
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>0x0d</td>
+                <td>Carriage return</td>
+
+            </tr>
+        </table>
+        <h3 class="subtitle">String Special Operators</h3>
+        <p class="content">Assume string variable <strong>a</strong> holds 'Hello' and variable <strong>b</strong> holds 'Python', then −</p>
+        <table class="content-table">
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Concatenation - Adds values on either side of the operator</td>
+                <td>a + b will give HelloPython</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Repetition - Creates new strings, concatenating multiple copies of the same string</td>
+                <td>a*2 will give -HelloHello</td>
+            </tr>
+            <tr>
+                <td>[]</td>
+                <td>Slice - Gives the character from the given index</td>
+                <td>a[1] will give e</td>
+            </tr>
+            <tr>
+                <td>[ : ]</td>
+                <td>Range Slice - Gives the characters from the given range</td>
+                <td>a[1:4] will give ell</td>
+            </tr>
+            <tr>
+                <td>in</td>
+                <td>Membership - Returns true if a character exists in the given string</td>
+                <td>H in a will give 1</td>
+            </tr>
+            <tr>
+                <td>r/R</td>
+                <td>Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.</td>
+                <td>print r'\n' prints \n and print R'\n'prints \n</td>
+            </tr>
+          </table>
+          <br />
+          <h3 class="subtitle">Built-in String Methods</h3>
+          <p class="content">Python includes the following built-in methods to manipulate strings −</p>
+          <table class="content-table">
+              <tr>
+                  <th>Sr.No.</th>
+                  <th>Methods with Description</th>
+              </tr>
+              <tr>
+                  <td>1.</td>
+                  <td>
+                      <span class="heading">capitalize()</span><br>
+                      Capitalizes first letter of string
+                  </td>
+              </tr>
+              <tr>
+                  <td>2.</td>
+                  <td>
+                      <span class="heading">center(width, fillchar)</span><br>
+                      Returns a space-padded string with the original string centered to a total of width columns.
+                  </td>
+              </tr>
+              <tr>
+                  <td>3.</td>
+                  <td>
+                      <span class="heading">isalnum()</span><br>
+                      Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.
+                  </td>
+              </tr>
+              <tr>
+                  <td>4.</td>
+                  <td>
+                      <span class="heading">islower()</span><br>
+                      Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.
+                  </td>
+              </tr>
+              <tr>
+                  <td>5.</td>
+                  <td>
+                      <span class="heading">isspace()</span><br>
+                      Returns true if string contains only whitespace characters and false otherwise.
+                  </td>
+              </tr>
+              <tr>
+                  <td>6.</td>
+                  <td>
+                      <span class="heading">isupper()</span><br>
+                      Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.
+                  </td>
+              </tr>
+              <tr>
+                  <td>7.</td>
+                  <td>
+                      <span class="heading">maketrans()</span><br>
+                      Returns a translation table to be used in translate function.
+                  </td>
+              </tr>
+              <tr>
+                  <td>8.</td>
+                  <td>
+                      <span class="heading">rindex( str, beg=0, end=len(string)</span><br>
+                      Same as index(), but search backwards in string.
+                  </td>
+              </tr>
+              <tr>
+                  <td>9.</td>
+                  <td>
+                      <span class="heading">rstrip()</span><br>
+                      Removes all trailing whitespace of string.
+                  </td>
+              </tr>
+              <tr>
+                  <td>10.</td>
+                  <td>
+                      <span class="heading">swapcase()</span><br>
+                      Inverts case for all letters in string.
+                  </td>
+              </tr>
+          </table>
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/numbers'">Prev page<i class="fa fa-angle-left"></i></button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/lists'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+    </section>
+<%- include ("partials/footer") -%>

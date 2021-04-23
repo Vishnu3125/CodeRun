@@ -1,0 +1,251 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+<section class="ftco-content">
+
+
+    <h2 class="page-title">Modules</h2>
+    <nav class="links">
+        <button class="btn-links">PDF Version</button>
+        <button class="btn-links" onclick="location.href='/date-time'">Date & Time </button>
+        <button class="btn-links" onclick="location.href='/functions'">Functions</button>
+        <button class="btn-links" onclick="location.href='/fileio'">FileIO </button>
+        <button class="btn-links" onclick="location.href='/exceptions'">exceptions </button>
+        <button class="btn-links" onclick="location.href='/class-objects'">class-objects </button>
+    </nav>
+        <p class="content">
+            A module allows you to logically organize your Python code. Grouping related code into a module makes the code easier to understand and use.
+             A module is a Python object with arbitrarily named attributes that you can bind and reference.
+            <br>
+            Simply, a module is a file consisting of Python code. A module can define functions, classes and variables. A module can also include runnable code.
+        </p>
+
+        <h3 class="subtittle">Example</h3>
+        <p class="content">
+            The Python code for a module named aname normally resides in a file named aname.py. Here's an example of a simple module, support.py
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">def print_func</span><span class="brackets">(</span><span class="function"> par </span><span class="brackets">)</span>:<br>
+                <span class="function">print</span> <span class="disptxt">"Hello: ",</span> par<br>
+                <span class="function">return</span>
+            </p>
+        </aside>
+
+        <h3 class="subtittle">The import Statement</h3>
+        <p class="content">
+            You can use any Python source file as a module by executing an import statement in some other Python source file. The import has the following syntax −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">import module1[, module2[,... moduleN]</span><br>
+            </p>
+        </aside>
+        <p class="content">
+            When the interpreter encounters an import statement, it imports the module if the module is present in the search path. A search path is a list of
+            directories that the interpreter
+            searches before importing a module. For example, to import the module support.py, you need to put the following command at the top of the script −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"># Import module support</span><br>
+                <span class="function">import support</span><br>
+                <span class="function"># Now you can call defined function that module as follows</span><br>
+                <span class="function">support.print_func</span> <span class="brackets">(</span><span class="disptxt">"Zara"</span><span class="brackets">)</span>;
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Hello : Zara
+            </p>
+        </aside>
+        <p class="content">
+            A module is loaded only once,
+            regardless of the number of times it is imported.
+            This prevents the module execution from happening over and over again if multiple imports occur.
+        </p>
+
+        <h3 class="subtittle">The from...import Statement</h3>
+        <p class="content">
+            Python's from statement lets you import specific attributes from a module into the current namespace. The from...import has the following syntax −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                from modname import name1[, name2[, ... nameN]]
+            </p>
+        </aside>
+        <p class="content">
+            For example, to import the function fibonacci from the module fib, use the following statement −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                from fib import fibonacci
+            </p>
+        </aside>
+        <p class="content">
+            This statement does not import the entire module fib into the current namespace;
+            it just introduces the item fibonacci from the module fib into the global symbol table of the importing module.
+        </p>
+
+        <h3 class="subtittle">Locating Modules</h3>
+        <p class="content">
+            When you import a module, the Python interpreter searches for the module in the following sequences −
+        </p>
+        <ul class="content-bulletlist">
+            <li> The current directory.</li>
+            <li> If the module isn't found, Python then searches each directory in the shell variable PYTHONPATH.</li>
+            <li> If all else fails, Python checks the default path. On UNIX, this default path is normally /usr/local/lib/python/.</li>
+        </ul>
+        <p class="content">
+            The module search path is stored in the system module sys as the sys.path variable. The sys.path variable contains the current directory,
+            PYTHONPATH, and the installation-dependent default.
+        </p>
+
+        <h3 class="subtittle">The PYTHONPATH Variable</h3>
+        <p class="content">
+            The PYTHONPATH is an environment variable, consisting of a list of directories. The syntax of PYTHONPATH is the same as that of the
+            shell variable PATH.
+            <br>
+            Here is a typical PYTHONPATH from a Windows system −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                set PYTHONPATH = c:\python20\lib;
+            </p>
+        </aside>
+        <p class="content">
+            And here is a typical PYTHONPATH from a UNIX system −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                set PYTHONPATH = /usr/local/lib/python
+            </p>
+        </aside>
+
+        <h3 class="subtittle">Namespaces and Scoping</h3>
+        <p class="content">
+            Variables are names (identifiers) that map to objects. A namespace is a dictionary of variable names (keys) and their corresponding objects (values).
+            <br>
+            A Python statement can access variables in a local namespace and in the global namespace. If a local and a global variable have the same name,
+            the local variable shadows the global variable.
+            <br>
+            Each function has its own local namespace. Class methods follow the same scoping rule as ordinary functions.
+            <br>
+            Python makes educated guesses on whether variables are local or global. It assumes that any variable assigned a value in a function is local.
+            <br>
+            Therefore, in order to assign a value to a global variable within a function, you must first use the global statement.
+            <br>
+            The statement global VarName tells Python that VarName is a global variable. Python stops searching the local namespace for the variable.
+            <br>
+            For example, we define a variable Money in the global namespace. Within the function Money, we assign Money a value, therefore Python assumes
+            Money as a local variable. However, we accessed the value of the local variable Money before setting it, so an UnboundLocalError is the result.
+            Uncommenting the global statement fixes the problem.
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function">Money = 2000</span><br>
+                <span class="function">def </span> <span class="brackets">( </span> <span class="disptxt">AddMoney</span> <span class="brackets"> ) </span>:<br>
+                <span class="function"># Uncomment the following line to fix the code:</span><br>
+                <span class="function"># global Money</span><br>
+                Money = Money + 1<br>
+                <br>
+                <span class="function">print</span> <span class="disptxt">Money</span> <br>
+                <span class="disptxt">AddMoney</span> <span class="brackets">( )</span><br>
+                <span class="function">print</span><span class="disptxt">Money</span> <br>
+            </p>
+        </aside>
+
+        <h3 class="subtittle">The dir( ) Function</h3>
+        <p class="content">
+            The dir() built-in function returns a sorted list of strings containing the names defined by a module.<br>
+            The list contains the names of all the modules, variables and functions that are defined in a module. Following is a simple example −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <br>
+                <span class="function"># Import built-in module math</span><br>
+                <span class="function"> Import  math</span><br>
+                <br>
+                <span class="function"> content = dir</span><span class="brackets">(</span><span class="disptxt">Math</span><span class="brackets">)</span><br>
+                <span class="function"> print content </span><br>
+            </p>
+        </aside>
+        <p class="content">
+            When the above code is executed, it produces the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                ['__doc__', '__file__', '__name__', 'acos', 'asin', 'atan',
+                'atan2', 'ceil', 'cos', 'cosh', 'degrees', 'e', 'exp',
+                'fabs', 'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log',
+                'log10', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh',
+                'sqrt', 'tan', 'tanh']
+            </p>
+        </aside>
+        <p class="content">
+            Here, the special string variable __name__ is the module's name, and __file__ is the filename from which the module was loaded.
+        </p>
+
+        <h3 class="subtittle">The reload() Function</h3>
+        <p class="content">
+            The globals() and locals() functions can be used to return the names in the global and local namespaces depending on the
+            location from where they are called.
+            <br>
+            If locals() is called from within a function, it will return all the names that can be accessed locally from that function.
+            <br>
+            If globals() is called from within a function, it will return all the names that can be accessed globally from that function.
+            <br>
+            The return type of both these functions is dictionary. Therefore, names can be extracted using the keys() function.
+        </p>
+
+        <h3 class="subtittle">The globals() and locals() Functions</h3>
+        <p class="content">
+            The globals() and locals() functions can be used to return the names in the global and local namespaces depending on the location
+            from where they are called.
+            <br>
+            If locals() is called from within a function, it will return all the names that can be accessed locally from that function.
+            <br>
+            If globals() is called from within a function, it will return all the names that can be accessed globally from that function.
+            <br>
+            The return type of both these functions is dictionary. Therefore, names can be extracted using the keys() function.
+        </p>
+
+        <h3 class="subtittle">The reload() Function</h3>
+        <p class="content">
+            When the module is imported into a script, the code in the top-level portion of a module is executed only once.
+            <br>
+            Therefore, if you want to reexecute the top-level code in a module, you can use the reload() function. The reload() function
+            imports a previously imported module again. The syntax of the reload() function is this −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                reload(module_name)
+            </p>
+        </aside>
+        <p class="content">
+            Here, module_name is the name of the module you want to reload and not the string containing the module name. For example,
+            to reload hello module, do the following −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                reload(hello)
+            </p>
+        </aside>
+
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks" onclick="location.href='/functions'"><i class="fa fa-angle-left"></i>Previous Page</button>
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/fileio'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+</section>
+
+<%- include ("partials/footer") -%>

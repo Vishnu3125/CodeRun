@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in / Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'">
+    <link rel="stylesheet" href="css/login-signup.css">
+    <script src="https://kit.fontawesome.com/320f551013.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="login-signup">
+          <form action="/login" class="login-form" method="POST">
+            <h2 class="title">Login</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i><input type="text" name="username" placeholder="Username" id="username">
+            </div>
+            <div class="input-field">
+              <i class="fas fa-key"></i><input type="password" name="password" placeholder="Password" id="password">
+            </div>
+            <input type="submit" class="btn" value="Log In">
+             <p class="social-text">Or Login with social platforms</p>
+             <div class="social-media">
+               <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+               <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+               <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+               <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+             </div>
+          </form>
+
+          <form action="/signup" class="signup-form" method="POST" onsubmit="return validate()">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+
+              <i class="fas fa-user"></i><input type="text" name="username" placeholder="Username" id="username" required>
+
+
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i><input type="email" name="Email" placeholder="Email" id="email" required>
+            </div>
+            <div class="input-field">
+
+              <i class="fas fa-key"></i><input type="password" name="password" placeholder="Password" id="password" required>
+
+            </div>
+            <input type="submit" class="btn" value="Sign Up">
+             <p class="social-text">Or Sign up with social platforms</p>
+             <div class="social-media">
+               <a href="" class="social-icon"><i class="fab fa-google"></i></a>
+               <a href="" class="social-icon"><i class="fab fa-facebook"></i></a>
+               <a href="" class="social-icon"><i class="fab fa-linkedin"></i></a>
+               <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+             </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>Join us today to learn python in just a few days with our best tutorials and practice the codes!</p>
+            <button class="btn transparent" id="signup-btn">Sign up</button>
+          </div>
+          <img src="/images/login.svg" class="image" alt="">
+        </div>
+
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Already a user ?</h3>
+            <p>Login to continue learning and exploring python with us!</p>
+            <button class="btn transparent" id="login-btn">Login</button>
+          </div>
+          <img src="/images/signup.svg" class="image" alt="">
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/login-signup.js"></script>
+</body>
+<script>
+  function validate()
+{
+verifyEmail();
+}
+function verifyEmail(){
+        var x = document.getElementById('email').value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+            alert("Not a valid e-mail address");
+        return false;
+        }
+       return true;
+    }
+</script>
+</html>

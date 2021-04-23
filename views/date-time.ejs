@@ -1,0 +1,248 @@
+<%- include("partials/header") -%>
+<%- include("partials/side-nav") -%>
+
+<section class="ftco-content">
+
+    <h2 class="page-title">Date & Time</h2>
+    <nav class="links">
+        <button class="btn-links">PDF Version</button>
+        <button class="btn-links" onclick="location.href='/functions'">Function</button>
+        <button class="btn-links" onclick="location.href='/modules'">Modules </button>
+        <button class="btn-links" onclick="location.href='/fileio'">FileIO </button>
+        <button class="btn-links" onclick="location.href='/exceptions'">exceptions </button>
+        <button class="btn-links" onclick="location.href='/class-objects'">class-objects </button>
+    </nav>
+        <p class="content">
+            A Python program can handle date and time in several ways.
+            Converting between date formats is a common chore for computers.
+            Python's time and calendar modules help track dates and times.
+        </p>
+
+        <h3 class="subtitle">What is Tick?</h3>
+        <p class="content">
+            Time intervals are floating-point numbers in units of seconds.
+            Particular instants in time are expressed in seconds since 00:00:00 hrs January 1, 1970(epoch).<br>
+            There is a popular time module available in Python which provides functions for working with times, and for converting
+            between representations.
+            The function time.time() returns the current system time in ticks since 00:00:00 hrs January 1, 1970(epoch).
+        </p>
+        <h3 class="subtittle">Example</h3>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function">import time;</span><br>
+                <span class="function"># This is required to include time module.</span><br>
+                <br>
+                ticks = time.time<br><span class="brackets">( )</span>
+                <span class="function">print</span> <span class="disptxt">"Number of ticks since 12:00am, January 1, 1970:",</span> ticks<br>
+            </p>
+        </aside>
+        <p class="content">
+            This would produce a result something as follows −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Number of ticks since 12:00am, January 1, 1970: 7186862.73399
+            </p>
+        </aside>
+        <p class="content">
+            Date arithmetic is easy to do with ticks. However, dates before the epoch cannot be represented in this form.
+             Dates in the far future also cannot be represented this way - the cutoff point is sometime in 2038 for UNIX and Windows.
+        </p>
+
+        <h3 class="subtitle">What is TimeTuple?</h3>
+        <p class="content">
+            Many of Python's time functions handle time as a tuple of 9 numbers, as shown below −
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Index </th>
+                <th>Field</th>
+                <th>Values </th>
+            </tr>
+            <tr>
+                <td>0.</td>
+                <td>4-digit year</td>
+                <td>2008</td>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Month</td>
+                <td>1 to 12</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Day</td>
+                <td>1 to 31</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Hour</td>
+                <td>0 to 23</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Minute</td>
+                <td>0 to 59</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Second</td>
+                <td>0 to 61 (60 or 61 are leap-seconds)</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Day of Week</td>
+                <td>0 to 6 (0 is Monday)</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Day of year</td>
+                <td>1 to 366 (Julian day)</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Daylight savings</td>
+                <td>-1, 0, 1, -1 means library determines DST</td>
+            </tr>
+        </table>
+        <p class="content">
+            The above tuple is equivalent to struct_time structure. This structure has following attributes −
+        </p>
+        <table class="content-table">
+            <tr>
+                <th>Index </th>
+                <th>Attributes</th>
+                <th>Values </th>
+            </tr>
+            <tr>
+                <td>0.</td>
+                <td>tm_year</td>
+                <td>2008</td>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>tm_mon</td>
+                <td>1 to 12</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>tm_mday</td>
+                <td>1 to 31</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>tm_hour</td>
+                <td>0 to 23</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>tm_min</td>
+                <td>0 to 59</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>tm_sec</td>
+                <td>0 to 61 (60 or 61 are leap-seconds)</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>tm_wday</td>
+                <td>0 to 6 (0 is Monday)</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>tm_yday</td>
+                <td>1 to 366 (Julian day)</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>tm_isdst</td>
+                <td>-1, 0, 1, -1 means library determines DST</td>
+            </tr>
+        </table>
+
+        <h3 class="subtitle">Getting current time</h3>
+        <p class="content">
+            To translate a time instant from a seconds since the epoch floating-point value into a time-tuple,
+            pass the floating-point value to a function (e.g., localtime) that returns a time-tuple with all nine items valid.
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function">import time;</span><br>
+                <br>
+                localtime = time.localtime <span class="brackets">( time.time() )</span><br>
+                <span class="function">print</span> <span class="disptxt">"Local current time :",</span> localtime<br>
+            </p>
+        </aside>
+        <p class="content">
+            This would produce the following result, which could be formatted in any other presentable form −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Local current time : time.struct_time(tm_year=2013, tm_mon=7, tm_mday=17, tm_hour=21, tm_min=26, tm_sec=3, tm_wday=2, tm_yday=198, tm_isdst=0)
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Getting formatted time</h3>
+        <p class="content">
+            You can format any time as per your requirement, but simple method to get time in readable format is asctime() −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function">import time;</span><br>
+                <br>
+                localtime = time.asctime <span class="brackets">( time.localtime(time.time()) )</span><br>
+                <span class="function">print</span> <span class="disptxt">"Local current time :",</span> localtime<br>
+            </p>
+        </aside>
+        <p class="content">
+            This would produce the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Local current time : Tue Jan 13 10:17:09 2009
+            </p>
+        </aside>
+
+        <h3 class="subtitle">Getting calander for a Month</h3>
+        <p class="content">
+            The calendar module gives a wide range of methods to play with yearly and monthly calendars. Here, we print a calendar for a given month ( Jan 2008 ) −
+        </p>
+        <aside class="code-frame">
+            <p class="code">
+                <span class="function">#!/usr/bin/python</span><br>
+                <span class="function">import calander;</span><br>
+                <br>
+                cal = calender.month <span class="brackets">(2008, 1)</span><br>
+                <span class="disptxt">"Here is the calendar:"</span><br>
+                <span class="function">print</span> cal<br>
+            </p>
+        </aside>
+        <p class="content">
+            This would produce the following result −
+        </p>
+        <aside class="code-frame">
+            <p class="content">
+                Here is the calendar:<br>
+                January 2008<br>
+                Mo Tu We Th Fr Sa Su<br>
+                -  1  2  3  4  5  6<br>
+                7  8  9 10 11 12 13<br>
+                14 15 16 17 18 19 20<br>
+                21 22 23 24 25 26 27<br>
+                28 29 30 31<br>
+            </p>
+        </aside>
+
+        <hr>
+        <nav class="page-links">
+            <button class="btn-pglinks">PDF Preview</button>
+            <button class="btn-pglinks" onclick="location.href='/functions'">Next Page<i class="fa fa-angle-right"></i></button>
+        </nav>
+
+</section>
+
+<%- include ("partials/footer") -%>
